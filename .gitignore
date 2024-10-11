@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*zip
+*tar.gz
+*pdf
+refs/
+**/16S
+**/18S
+**/fastq
+
