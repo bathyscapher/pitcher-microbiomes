@@ -1,11 +1,4 @@
-################################################################################
-################################################################################
-################################################################################
-################################################################################
 ### SMP Read taxa (OTU or ASV), add metadata and much more
-### Authors: Rachel Korn
-### korn@cumulonimbus.at University of Fribourg 2019/2020
-################################################################################
 
 
 library("phyloseq")
@@ -17,10 +10,7 @@ library("igraph")
 library("Hmisc")
 
 
-setwd("~/Sarracenia-Microbiome-Project/Thesis/")
-
-
-rm(list = ls())
+rm(list = ls()); gc()
 set.seed(30008)
 
 
@@ -74,7 +64,7 @@ otus.cor <- otus.cor[, which(colSums(otus.cor) != 0)]
 
 
 ## Create a graph
-g3 <- graph.adjacency(otus.cor, weight = TRUE, mode = "undirected")
+g3 <- graph_from_adjacency_matrix(otus.cor, weight = TRUE, mode = "undirected")
 g3 <- simplify(g3) # remove duplicate and loop edges
 
 
@@ -186,9 +176,3 @@ components(g3)
 ## Clusters
 sizes(g3.louv)
 table(sizes(g3.louv))
-
-
-################################################################################
-################################################################################
-################################################################################
-################################################################################

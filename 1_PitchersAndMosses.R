@@ -1,11 +1,4 @@
-################################################################################
-################################################################################
-################################################################################
-################################################################################
-### SMP Pitchers and mosses
-### Authors: Rachel Korn
-### korn@cumulonimbus.at University of Fribourg 2020
-################################################################################
+### SMP Pitcher vs and moss communities
 
 
 library("phyloseq")
@@ -17,8 +10,7 @@ library("gridExtra")
 library("ggalluvial")
 
 
-rm(list = ls())
-setwd("~/Sarracenia-Microbiome-Project/Thesis")
+rm(list = ls()); gc()
 
 
 ################################################################################
@@ -251,23 +243,21 @@ mb.moss <- colnames(otu_table(moss.euk.a))
 
 ## Venn global and site-wise
 grid.newpage()
-vennAll <-
-  draw.pairwise.venn(area1 = length(mb.pitcher),
-                     area2 = length(mb.moss),
-                     cross.area = length(intersect(mb.pitcher, mb.moss)),
-                     category = c("",
-                                  sprintf("%s (%s) %%", "All sites",
-                                          format(round(100 /
-                                                         length(mb.pitcher) *
-                                                         length(intersect(
-                                                           mb.pitcher,
-                                                           mb.moss)),
-                                                       digits = 1),
-                                                 nsmall = 1))),
-                     lty = rep("blank", 2), fill = c("#D55E00", "#009E73"),
-                     alpha = rep(0.4, 2), cat.pos = c(180, 180),
-                     cex = rep(1.8, 3), cat.cex = 2.2, cat.dist = rep(0.025, 2),
-                     scaled = TRUE)
+vennAll <- draw.pairwise.venn(
+  area1 = length(mb.pitcher),
+  area2 = length(mb.moss),
+  cross.area = length(intersect(mb.pitcher, mb.moss)),
+  category = c("",
+               sprintf("%s (%s) %%", "All sites",
+                       format(round(100 / length(mb.pitcher) *
+                                      length(intersect(mb.pitcher, mb.moss)),
+                                    digits = 1),
+                              nsmall = 1))),
+  lty = rep("blank", 2), fill = c("#D55E00", "#009E73"),
+  alpha = rep(0.4, 2), cat.pos = c(180, 180),
+  cex = rep(1.8, 3), cat.cex = 2.2, cat.dist = rep(0.025, 2),
+  scaled = TRUE
+)
 dev.off()
 
 
@@ -295,26 +285,24 @@ for (i in 1:length(sites)) {
   mb.moss <- colnames(otu_table(moss.site))
 
   ## Draw the venns
-  assign(paste0("venn", sites[i]),
-         draw.pairwise.venn(area1 = length(mb.pitcher),
-                            area2 = length(mb.moss),
-                            cross.area = length(intersect(mb.pitcher, mb.moss)),
-                            category = c("",
-                                         sprintf("%s (%s %%)", sites[i],
-                                                 format(round(100 /
-                                                                length(
-                                                                  mb.pitcher) *
-                                                                length(
-                                                                  intersect(
-                                                                    mb.pitcher,
-                                                                    mb.moss)),
-                                                              digits = 1),
-                                                        nsmall = 1))),
-                            lty = rep("blank", 2),
-                            fill = c("#D55E00", "#009E73"),
-                            alpha = rep(0.4, 2), cat.pos = c(180, 180),
-                            cex = rep(1.8, 3), cat.cex = 2.2,
-                            cat.dist = rep(0.025, 2), scaled = TRUE))
+  assign(
+    paste0("venn", sites[i]),
+    draw.pairwise.venn(
+      area1 = length(mb.pitcher),
+      area2 = length(mb.moss),
+      cross.area = length(intersect(mb.pitcher, mb.moss)),
+      category = c("",
+                   sprintf("%s (%s %%)", sites[i],
+                           format(round(100 / length(mb.pitcher) *
+                                          length(intersect(mb.pitcher, mb.moss)),
+                                        digits = 1),
+                                  nsmall = 1))),
+      lty = rep("blank", 2),
+      fill = c("#D55E00", "#009E73"),
+      alpha = rep(0.4, 2), cat.pos = c(180, 180),
+      cex = rep(1.8, 3), cat.cex = 2.2,
+      cat.dist = rep(0.025, 2), scaled = TRUE
+    ))
 }
 
 
@@ -323,9 +311,3 @@ pdf("SMP_venn_18S_Sitewise.pdf", height = 7, width = 8.27)
 grid.arrange(grobTree(vennAll), grobTree(vennCB), grobTree(vennLT),
              grobTree(vennLE), grobTree(vennLV), grobTree(vennLM), ncol = 2)
 dev.off()
-
-
-################################################################################
-################################################################################
-################################################################################
-################################################################################

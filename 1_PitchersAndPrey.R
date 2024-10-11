@@ -1,11 +1,4 @@
-################################################################################
-################################################################################
-################################################################################
-################################################################################
 ### SMP Pitcher microbiome and prey composition
-### Authors: Rachel Korn
-### korn@cumulonimbus.at University of Fribourg 2020
-################################################################################
 
 
 library("phyloseq")
@@ -16,10 +9,7 @@ library("vegan")
 library("cocorresp")
 
 
-rm(list = ls())
-setwd("~/Sarracenia-Microbiome-Project/Thesis")
-
-
+rm(list = ls()); gc()
 set.seed(34706)
 
 
@@ -192,7 +182,8 @@ plot_ordination(ps, smp.nmds, shape = "Site", color = "prey.items",
 set.seed(14262)
 
 
-prey <- read.table("csv/SMP_Prey_clean.csv", sep = "\t", header = TRUE)
+prey <- read.table("csv/SMP_Prey_clean.csv",
+                   sep = "\t", header = TRUE)
 
 
 rownames(prey) <- prey$FullID
@@ -251,9 +242,3 @@ summary(pCoCA.smp.1)
 
 ### Explained variance
 pCoCA.smp.sum <- summary(pCoCA.smp)
-
-
-################################################################################
-################################################################################
-################################################################################
-################################################################################

@@ -1,11 +1,4 @@
-################################################################################
-################################################################################
-################################################################################
-################################################################################
 ### SMP Read taxa (OTU or ASV), add metadata and much more
-### Authors: Rachel Korn
-### korn@cumulonimbus.at University of Fribourg 2019/2020
-################################################################################
 
 
 library("phyloseq")
@@ -16,10 +9,7 @@ theme_set(theme_bw(base_size = 20) +
 library("reshape2")
 
 
-rm(list = ls())
-setwd("~/Sarracenia-Microbiome-Project/Thesis")
-
-
+rm(list = ls()); gc()
 set.seed(34706)
 
 
@@ -44,14 +34,15 @@ moss.euk.a <- readRDS("rds/SMP_moss20.euk.a.RDS")
 ################################################################################
 ### nMDS pitchers
 ## Choose pro- or eukaryotes
-# primer <- "16S"
-primer <- "18S"
+primer <- "16S"
+# primer <- "18S"
 
 
-if(primer == "16S")
-  {smp <- prok.a}
-if(primer == "18S")
-  {smp <- euk.a}
+if(primer == "16S") {
+  smp <- prok.a
+} else if(primer == "18S") {
+  smp <- euk.a
+}
 
 
 ## log-transform
@@ -82,13 +73,14 @@ plot_ordination(smp, smp.nmds, shape = "Succession", color = "Site",
 
 ### nMDS pitchers and mosses
 ## Choose pro- or eukaryotes
-# primer <- "16S"
-primer <- "18S"
+primer <- "16S"
+# primer <- "18S"
 
-if(primer == "16S")
-  {smp.moss <- merge_phyloseq(prok.a, moss.prok.a)}
-if(primer == "18S")
-  {smp.moss <- merge_phyloseq(euk.a, moss.euk.a)}
+if(primer == "16S") {
+  smp.moss <- merge_phyloseq(prok.a, moss.prok.a)
+} else if(primer == "18S") {
+  smp.moss <- merge_phyloseq(euk.a, moss.euk.a)
+}
 
 
 ## log-transform
@@ -141,10 +133,10 @@ tax.otu.l[, -c(1:7)] <- log1p(tax.otu.l[, -c(1:7)])
 
 
 tax.otu.lm <- reshape2::melt(tax.otu.l, id.vars = c("Taxa", "Domain",
-                                                      "Phylum", "Class",
-                                                      "Order", "Family",
-                                                      "Genus"),
-                               variable.name = "FullID", value.name = "Count")
+                                                    "Phylum", "Class",
+                                                    "Order", "Family",
+                                                    "Genus"),
+                             variable.name = "FullID", value.name = "Count")
 tax.otu.lm$Site <- substr(tax.otu.lm$FullID, 1, 2)
 tax.otu.lm$Site <- ordered(tax.otu.lm$Site,
                            levels = c("CB", "LT", "LE", "LV", "LM"))
@@ -255,9 +247,3 @@ ggplot(inc, aes(x = Phylum, y = IncidencePercent)) +
   coord_flip() +
   theme_bw(base_size = 10)
 # ggsave("SMP_Incidence.pdf", width = 8.27, height = 11.69 / 2)
-
-
-################################################################################
-################################################################################
-################################################################################
-################################################################################

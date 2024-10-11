@@ -1,11 +1,4 @@
-################################################################################
-################################################################################
-################################################################################
-################################################################################
 ### SMP Distance decay
-### Authors: Rachel Korn
-### korn@cumulonimbus.at University of Fribourg 2019/2020
-################################################################################
 
 
 library("phyloseq")
@@ -18,8 +11,7 @@ library("scales")
 library("lme4")
 
 
-rm(list = ls())
-setwd("~/Sarracenia-Microbiome-Project/Thesis")
+rm(list = ls()); gc()
 
 
 ################################################################################
@@ -78,8 +70,8 @@ distance <- read.table("csv/SMP_2018_DistanceBetweenPlants.csv",
                        header = TRUE, sep = ",", check.names = FALSE)
 
 
-distance <- merge(distance, smpMeta.df[, c(1, 4)], by.x = c("ID"),
-                  by.y = "PlantID")
+distance <- merge(distance, smpMeta.df[, c(1, 4)],
+                  by.x = c("ID"), by.y = "PlantID")
 rownames(distance) <- distance$FullID
 distance <- distance[with(distance, order(FullID)), ]
 distance$ID <- NULL
@@ -90,8 +82,8 @@ distance <- as.data.frame(t(distance))
 distance <- cbind("ID" = row.names(distance), distance)
 
 
-distance <- merge(distance, smpMeta.df[, c(1, 4)], by.x = "ID",
-                  by.y = "PlantID")
+distance <- merge(distance, smpMeta.df[, c(1, 4)],
+                  by.x = "ID", by.y = "PlantID")
 rownames(distance) <- distance$FullID
 distance <- distance[with(distance, order(FullID)), ]
 distance$ID <- NULL
@@ -243,9 +235,3 @@ ggplot(bc.distance.d, aes(x = Pairs, y = BC_distance, fill = col.box)) +
   scale_fill_identity()
 # ggsave("SMP_16S_BC-dissimilarity.pdf", width = 6.5, height = 8.27)
 # ggsave("SMP_18S_BC-dissimilarity.pdf", width = 6.5, height = 8.27)
-
-
-################################################################################
-################################################################################
-################################################################################
-################################################################################
