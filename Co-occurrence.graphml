@@ -1,0 +1,1823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+<!-- Created by igraph -->
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_degree" for="node" attr.name="degree" attr.type="double"/>
+  <key id="v_ASV" for="node" attr.name="ASV" attr.type="string"/>
+  <key id="v_Genus" for="node" attr.name="Genus" attr.type="string"/>
+  <key id="v_Domain" for="node" attr.name="Domain" attr.type="string"/>
+  <key id="v_Abundance" for="node" attr.name="Abundance" attr.type="double"/>
+  <key id="v_louvain.member" for="node" attr.name="louvain.member" attr.type="double"/>
+  <key id="e_weight" for="edge" attr.name="weight" attr.type="double"/>
+  <key id="e_width" for="edge" attr.name="width" attr.type="double"/>
+  <key id="e_sign" for="edge" attr.name="sign" attr.type="string"/>
+  <key id="e_scale" for="edge" attr.name="scale" attr.type="double"/>
+  <graph id="G" edgedefault="undirected">
+    <node id="n0">
+      <data key="v_name">Ochromonas</data>
+      <data key="v_degree">4</data>
+      <data key="v_ASV">ASV332</data>
+      <data key="v_Genus">Ochromonas</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">23.7788198516413</data>
+      <data key="v_louvain.member">1</data>
+    </node>
+    <node id="n1">
+      <data key="v_name">Poterioochromonas</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV333</data>
+      <data key="v_Genus">Poterioochromonas</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">16.7431260249892</data>
+      <data key="v_louvain.member">1</data>
+    </node>
+    <node id="n2">
+      <data key="v_name">Chloromonas</data>
+      <data key="v_degree">5</data>
+      <data key="v_ASV">ASV336</data>
+      <data key="v_Genus">Chloromonas</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">4.80892834975952</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n3">
+      <data key="v_name">Prostomatea</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV337</data>
+      <data key="v_Genus">Prostomatea</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">3.48830176447801</data>
+      <data key="v_louvain.member">3</data>
+    </node>
+    <node id="n4">
+      <data key="v_name">Conthreep</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV338</data>
+      <data key="v_Genus">Conthreep</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">12.1118533243637</data>
+      <data key="v_louvain.member">3</data>
+    </node>
+    <node id="n5">
+      <data key="v_name">Glissomonadida</data>
+      <data key="v_degree">6</data>
+      <data key="v_ASV">ASV339</data>
+      <data key="v_Genus">Glissomonadida</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">12.0174611404771</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n6">
+      <data key="v_name">Cryptocaryon</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV340</data>
+      <data key="v_Genus">Cryptocaryon</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">6.80359140656889</data>
+      <data key="v_louvain.member">3</data>
+    </node>
+    <node id="n7">
+      <data key="v_name">Bodo</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV341</data>
+      <data key="v_Genus">Bodo</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">4.51982384306969</data>
+      <data key="v_louvain.member">5</data>
+    </node>
+    <node id="n8">
+      <data key="v_name">Pedospumella</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV343</data>
+      <data key="v_Genus">Pedospumella</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">3.80071045985176</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n9">
+      <data key="v_name">Achlya</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV344</data>
+      <data key="v_Genus">Achlya</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">3.20892623171462</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n10">
+      <data key="v_name">Cyclidium</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV345</data>
+      <data key="v_Genus">Cyclidium</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">3.19131650925438</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <node id="n11">
+      <data key="v_name">Metakinetoplastina</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV346</data>
+      <data key="v_Genus">Metakinetoplastina</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">3.44071261849683</data>
+      <data key="v_louvain.member">7</data>
+    </node>
+    <node id="n12">
+      <data key="v_name">Oophila</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV349</data>
+      <data key="v_Genus">Oophila</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">1.65553144084646</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <node id="n13">
+      <data key="v_name">Cryptobia</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV350</data>
+      <data key="v_Genus">Cryptobia</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">5.41631678941241</data>
+      <data key="v_louvain.member">8</data>
+    </node>
+    <node id="n14">
+      <data key="v_name">Chlamydomonadales_fa</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV351</data>
+      <data key="v_Genus">Chlamydomonadales_fa</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.88344708701063</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n15">
+      <data key="v_name">Chrysophyceae</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV354</data>
+      <data key="v_Genus">Chrysophyceae</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">1.83197144427055</data>
+      <data key="v_louvain.member">1</data>
+    </node>
+    <node id="n16">
+      <data key="v_name">Neobodo</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV355</data>
+      <data key="v_Genus">Neobodo</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">1.46388636811566</data>
+      <data key="v_louvain.member">9</data>
+    </node>
+    <node id="n17">
+      <data key="v_name">Peronosporomycetes_fa</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV356</data>
+      <data key="v_Genus">Peronosporomycetes_fa</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.511088442779521</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n18">
+      <data key="v_name">Cercozoa</data>
+      <data key="v_degree">7</data>
+      <data key="v_ASV">ASV360</data>
+      <data key="v_Genus">Cercozoa</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">3.31177921001475</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n19">
+      <data key="v_name">Rhogostoma</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV363</data>
+      <data key="v_Genus">Rhogostoma</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">1.11201427571911</data>
+      <data key="v_louvain.member">10</data>
+    </node>
+    <node id="n20">
+      <data key="v_name">Bicosoeca</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV365</data>
+      <data key="v_Genus">Bicosoeca</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.569284847571817</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n21">
+      <data key="v_name">Parabodonida</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV367</data>
+      <data key="v_Genus">Parabodonida</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.224705417032646</data>
+      <data key="v_louvain.member">11</data>
+    </node>
+    <node id="n22">
+      <data key="v_name">Colpodidium</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV368</data>
+      <data key="v_Genus">Colpodidium</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.99737791003968</data>
+      <data key="v_louvain.member">12</data>
+    </node>
+    <node id="n23">
+      <data key="v_name">Gymnophrys</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV370</data>
+      <data key="v_Genus">Gymnophrys</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.217803008154187</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n24">
+      <data key="v_name">Intramacronucleata</data>
+      <data key="v_degree">4</data>
+      <data key="v_ASV">ASV378</data>
+      <data key="v_Genus">Intramacronucleata</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.40094363297681</data>
+      <data key="v_louvain.member">3</data>
+    </node>
+    <node id="n25">
+      <data key="v_name">Oligohymenophorea</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV382</data>
+      <data key="v_Genus">Oligohymenophorea</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.115753684392803</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <node id="n26">
+      <data key="v_name">Ancistrum</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV395</data>
+      <data key="v_Genus">Ancistrum</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.111025663824744</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <node id="n27">
+      <data key="v_name">Ochrophyta</data>
+      <data key="v_degree">4</data>
+      <data key="v_ASV">ASV398</data>
+      <data key="v_Genus">Ochrophyta</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.588437933512349</data>
+      <data key="v_louvain.member">1</data>
+    </node>
+    <node id="n28">
+      <data key="v_name">Coccomyxa</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV400</data>
+      <data key="v_Genus">Coccomyxa</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.0499483098891386</data>
+      <data key="v_louvain.member">10</data>
+    </node>
+    <node id="n29">
+      <data key="v_name">Ochromonadales_fa</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV408</data>
+      <data key="v_Genus">Ochromonadales_fa</data>
+      <data key="v_Domain">Eukaryota</data>
+      <data key="v_Abundance">0.0198589589970432</data>
+      <data key="v_louvain.member">1</data>
+    </node>
+    <node id="n30">
+      <data key="v_name">Rubrivivax</data>
+      <data key="v_degree">12</data>
+      <data key="v_ASV">ASV1</data>
+      <data key="v_Genus">Rubrivivax</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">9.77325114328798</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n31">
+      <data key="v_name">Aquitalea</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV2</data>
+      <data key="v_Genus">Aquitalea</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">9.06575653455372</data>
+      <data key="v_louvain.member">14</data>
+    </node>
+    <node id="n32">
+      <data key="v_name">Rhodocyclus</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV3</data>
+      <data key="v_Genus">Rhodocyclus</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">6.39931865899532</data>
+      <data key="v_louvain.member">14</data>
+    </node>
+    <node id="n33">
+      <data key="v_name">Cupriavidus</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV4</data>
+      <data key="v_Genus">Cupriavidus</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">4.27805249870314</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n34">
+      <data key="v_name">Curvibacter</data>
+      <data key="v_degree">5</data>
+      <data key="v_ASV">ASV5</data>
+      <data key="v_Genus">Curvibacter</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">4.95580206955944</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n35">
+      <data key="v_name">Allorhizobium-Neorhizobium-Pararhizobium-Rhizobium</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV7</data>
+      <data key="v_Genus">Allorhizobium-Neorhizobium-Pararhizobium-Rhizobium</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">5.04770608582663</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n36">
+      <data key="v_name">Pedobacter</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV8</data>
+      <data key="v_Genus">Pedobacter</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">6.28935301656666</data>
+      <data key="v_louvain.member">15</data>
+    </node>
+    <node id="n37">
+      <data key="v_name">Acidisoma</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV10</data>
+      <data key="v_Genus">Acidisoma</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.160851106938388</data>
+      <data key="v_louvain.member">16</data>
+    </node>
+    <node id="n38">
+      <data key="v_name">Mucilaginibacter</data>
+      <data key="v_degree">10</data>
+      <data key="v_ASV">ASV11</data>
+      <data key="v_Genus">Mucilaginibacter</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">7.60551588286109</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n39">
+      <data key="v_name">Novosphingobium</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV12</data>
+      <data key="v_Genus">Novosphingobium</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">5.76306275379296</data>
+      <data key="v_louvain.member">17</data>
+    </node>
+    <node id="n40">
+      <data key="v_name">Sphingobacteriaceae</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV14</data>
+      <data key="v_Genus">Sphingobacteriaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.974895715625484</data>
+      <data key="v_louvain.member">15</data>
+    </node>
+    <node id="n41">
+      <data key="v_name">Sphingomonadaceae</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV15</data>
+      <data key="v_Genus">Sphingomonadaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">2.51995063011286</data>
+      <data key="v_louvain.member">17</data>
+    </node>
+    <node id="n42">
+      <data key="v_name">Burkholderia-Caballeronia-Paraburkholderia</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV18</data>
+      <data key="v_Genus">Burkholderia-Caballeronia-Paraburkholderia</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">1.36882773300449</data>
+      <data key="v_louvain.member">15</data>
+    </node>
+    <node id="n43">
+      <data key="v_name">Pseudomonas</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV19</data>
+      <data key="v_Genus">Pseudomonas</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">10.7669036356791</data>
+      <data key="v_louvain.member">18</data>
+    </node>
+    <node id="n44">
+      <data key="v_name">Duganella</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV20</data>
+      <data key="v_Genus">Duganella</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">2.56353436807524</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n45">
+      <data key="v_name">Asticcacaulis</data>
+      <data key="v_degree">4</data>
+      <data key="v_ASV">ASV22</data>
+      <data key="v_Genus">Asticcacaulis</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">2.58227063655474</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n46">
+      <data key="v_name">Granulicella</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV25</data>
+      <data key="v_Genus">Granulicella</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0704808093656283</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <node id="n47">
+      <data key="v_name">Pseudacidovorax</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV26</data>
+      <data key="v_Genus">Pseudacidovorax</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">3.16326130955533</data>
+      <data key="v_louvain.member">17</data>
+    </node>
+    <node id="n48">
+      <data key="v_name">Rhodoferax</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV29</data>
+      <data key="v_Genus">Rhodoferax</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">1.09455115360994</data>
+      <data key="v_louvain.member">19</data>
+    </node>
+    <node id="n49">
+      <data key="v_name">Sphingomonas</data>
+      <data key="v_degree">4</data>
+      <data key="v_ASV">ASV30</data>
+      <data key="v_Genus">Sphingomonas</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">3.51433117197804</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n50">
+      <data key="v_name">Undibacterium</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV31</data>
+      <data key="v_Genus">Undibacterium</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">2.29202371833007</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n51">
+      <data key="v_name">Chryseobacterium</data>
+      <data key="v_degree">6</data>
+      <data key="v_ASV">ASV32</data>
+      <data key="v_Genus">Chryseobacterium</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">11.4076969295745</data>
+      <data key="v_louvain.member">15</data>
+    </node>
+    <node id="n52">
+      <data key="v_name">Delftia</data>
+      <data key="v_degree">5</data>
+      <data key="v_ASV">ASV33</data>
+      <data key="v_Genus">Delftia</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">1.42985032602017</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n53">
+      <data key="v_name">Janthinobacterium</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV34</data>
+      <data key="v_Genus">Janthinobacterium</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">1.2282828842937</data>
+      <data key="v_louvain.member">15</data>
+    </node>
+    <node id="n54">
+      <data key="v_name">Nubsella</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV36</data>
+      <data key="v_Genus">Nubsella</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">1.32557784817054</data>
+      <data key="v_louvain.member">15</data>
+    </node>
+    <node id="n55">
+      <data key="v_name">Microvirgula</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV37</data>
+      <data key="v_Genus">Microvirgula</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">1.39748434121696</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n56">
+      <data key="v_name">Inquilinus</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV39</data>
+      <data key="v_Genus">Inquilinus</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0645981425260521</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <node id="n57">
+      <data key="v_name">Phenylobacterium</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV40</data>
+      <data key="v_Genus">Phenylobacterium</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0445838401651675</data>
+      <data key="v_louvain.member">20</data>
+    </node>
+    <node id="n58">
+      <data key="v_name">Caulobacteraceae</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV43</data>
+      <data key="v_Genus">Caulobacteraceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.17436086921981</data>
+      <data key="v_louvain.member">20</data>
+    </node>
+    <node id="n59">
+      <data key="v_name">Brevundimonas</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV45</data>
+      <data key="v_Genus">Brevundimonas</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">2.00072852250128</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n60">
+      <data key="v_name">Aeromonas</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV47</data>
+      <data key="v_Genus">Aeromonas</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">1.09672947598399</data>
+      <data key="v_louvain.member">8</data>
+    </node>
+    <node id="n61">
+      <data key="v_name">Chitinophagaceae</data>
+      <data key="v_degree">6</data>
+      <data key="v_ASV">ASV50</data>
+      <data key="v_Genus">Chitinophagaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">2.95605950269819</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n62">
+      <data key="v_name">Rahnella</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV51</data>
+      <data key="v_Genus">Rahnella</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.214880362078837</data>
+      <data key="v_louvain.member">21</data>
+    </node>
+    <node id="n63">
+      <data key="v_name">Sphingobacterium</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV52</data>
+      <data key="v_Genus">Sphingobacterium</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.978213252936785</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n64">
+      <data key="v_name">Kinneretia</data>
+      <data key="v_degree">5</data>
+      <data key="v_ASV">ASV57</data>
+      <data key="v_Genus">Kinneretia</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.597243456565849</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n65">
+      <data key="v_name">Rhodopseudomonas</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV59</data>
+      <data key="v_Genus">Rhodopseudomonas</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.65692997862124</data>
+      <data key="v_louvain.member">22</data>
+    </node>
+    <node id="n66">
+      <data key="v_name">Stakelama</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV61</data>
+      <data key="v_Genus">Stakelama</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.617245823459729</data>
+      <data key="v_louvain.member">17</data>
+    </node>
+    <node id="n67">
+      <data key="v_name">Fimbriimonadaceae</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV62</data>
+      <data key="v_Genus">Fimbriimonadaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0278537271253978</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <node id="n68">
+      <data key="v_name">Bryocella</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV71</data>
+      <data key="v_Genus">Bryocella</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.046001329299387</data>
+      <data key="v_louvain.member">20</data>
+    </node>
+    <node id="n69">
+      <data key="v_name">Alkanindiges</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV74</data>
+      <data key="v_Genus">Alkanindiges</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.914332424022068</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n70">
+      <data key="v_name">Oxalicibacterium</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV76</data>
+      <data key="v_Genus">Oxalicibacterium</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.362637118574485</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n71">
+      <data key="v_name">Acinetobacter</data>
+      <data key="v_degree">8</data>
+      <data key="v_ASV">ASV80</data>
+      <data key="v_Genus">Acinetobacter</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.682150527780439</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n72">
+      <data key="v_name">Candidatus_Symbiobacter</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV81</data>
+      <data key="v_Genus">Candidatus_Symbiobacter</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0640489306534106</data>
+      <data key="v_louvain.member">19</data>
+    </node>
+    <node id="n73">
+      <data key="v_name">Massilia</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV82</data>
+      <data key="v_Genus">Massilia</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.195887472861423</data>
+      <data key="v_louvain.member">10</data>
+    </node>
+    <node id="n74">
+      <data key="v_name">Pleomorphomonadaceae</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV83</data>
+      <data key="v_Genus">Pleomorphomonadaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">1.00276200509684</data>
+      <data key="v_louvain.member">17</data>
+    </node>
+    <node id="n75">
+      <data key="v_name">Gordonia</data>
+      <data key="v_degree">5</data>
+      <data key="v_ASV">ASV85</data>
+      <data key="v_Genus">Gordonia</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.286258216006639</data>
+      <data key="v_louvain.member">17</data>
+    </node>
+    <node id="n76">
+      <data key="v_name">Pseudomonadaceae</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV88</data>
+      <data key="v_Genus">Pseudomonadaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.442145422635788</data>
+      <data key="v_louvain.member">18</data>
+    </node>
+    <node id="n77">
+      <data key="v_name">Morganella</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV90</data>
+      <data key="v_Genus">Morganella</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.154482184874471</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n78">
+      <data key="v_name">Acidobacteriaceae_(Subgroup_1)</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV92</data>
+      <data key="v_Genus">Acidobacteriaceae_(Subgroup_1)</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0165273135218634</data>
+      <data key="v_louvain.member">20</data>
+    </node>
+    <node id="n79">
+      <data key="v_name">MM1</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV98</data>
+      <data key="v_Genus">MM1</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0631206921134629</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n80">
+      <data key="v_name">Terriglobus</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV99</data>
+      <data key="v_Genus">Terriglobus</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.147948175935074</data>
+      <data key="v_louvain.member">20</data>
+    </node>
+    <node id="n81">
+      <data key="v_name">Stenotrophomonas</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV101</data>
+      <data key="v_Genus">Stenotrophomonas</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.162027016155753</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n82">
+      <data key="v_name">Neisseriaceae</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV103</data>
+      <data key="v_Genus">Neisseriaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.26837490614045</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <node id="n83">
+      <data key="v_name">Microbacteriaceae</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV104</data>
+      <data key="v_Genus">Microbacteriaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.017595293560136</data>
+      <data key="v_louvain.member">10</data>
+    </node>
+    <node id="n84">
+      <data key="v_name">Chromobacteriaceae</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV105</data>
+      <data key="v_Genus">Chromobacteriaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.13793983523902</data>
+      <data key="v_louvain.member">14</data>
+    </node>
+    <node id="n85">
+      <data key="v_name">Heliimonas</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV107</data>
+      <data key="v_Genus">Heliimonas</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.107780668424369</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <node id="n86">
+      <data key="v_name">Prosthecobacter</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV116</data>
+      <data key="v_Genus">Prosthecobacter</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.210857131476554</data>
+      <data key="v_louvain.member">17</data>
+    </node>
+    <node id="n87">
+      <data key="v_name">Rhodocyclaceae</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV126</data>
+      <data key="v_Genus">Rhodocyclaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0370719131971381</data>
+      <data key="v_louvain.member">14</data>
+    </node>
+    <node id="n88">
+      <data key="v_name">Dysgonomonas</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV129</data>
+      <data key="v_Genus">Dysgonomonas</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.115251047056171</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n89">
+      <data key="v_name">Methylobacterium</data>
+      <data key="v_degree">4</data>
+      <data key="v_ASV">ASV133</data>
+      <data key="v_Genus">Methylobacterium</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0580874260089917</data>
+      <data key="v_louvain.member">4</data>
+    </node>
+    <node id="n90">
+      <data key="v_name">Kaistia</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV138</data>
+      <data key="v_Genus">Kaistia</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.161249906797463</data>
+      <data key="v_louvain.member">17</data>
+    </node>
+    <node id="n91">
+      <data key="v_name">Pelomonas</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV139</data>
+      <data key="v_Genus">Pelomonas</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0143814839600576</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n92">
+      <data key="v_name">Tardiphaga</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV145</data>
+      <data key="v_Genus">Tardiphaga</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.035111553617381</data>
+      <data key="v_louvain.member">20</data>
+    </node>
+    <node id="n93">
+      <data key="v_name">Gammaproteobacteria</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV151</data>
+      <data key="v_Genus">Gammaproteobacteria</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.264338755135325</data>
+      <data key="v_louvain.member">18</data>
+    </node>
+    <node id="n94">
+      <data key="v_name">1174-901-12</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV152</data>
+      <data key="v_Genus">1174-901-12</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0232806403539141</data>
+      <data key="v_louvain.member">20</data>
+    </node>
+    <node id="n95">
+      <data key="v_name">Paracaedibacteraceae</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV154</data>
+      <data key="v_Genus">Paracaedibacteraceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0955239128100704</data>
+      <data key="v_louvain.member">5</data>
+    </node>
+    <node id="n96">
+      <data key="v_name">Clostridium_sensu_stricto_11</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV158</data>
+      <data key="v_Genus">Clostridium_sensu_stricto_11</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0315947306138349</data>
+      <data key="v_louvain.member">23</data>
+    </node>
+    <node id="n97">
+      <data key="v_name">Aminobacter</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV167</data>
+      <data key="v_Genus">Aminobacter</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0312154923140983</data>
+      <data key="v_louvain.member">20</data>
+    </node>
+    <node id="n98">
+      <data key="v_name">Achromobacter</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV168</data>
+      <data key="v_Genus">Achromobacter</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0482047275725617</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n99">
+      <data key="v_name">Rhodovastum</data>
+      <data key="v_degree">5</data>
+      <data key="v_ASV">ASV173</data>
+      <data key="v_Genus">Rhodovastum</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0286842534214391</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <node id="n100">
+      <data key="v_name">Lachnoclostridium_5</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV177</data>
+      <data key="v_Genus">Lachnoclostridium_5</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0340464454032894</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n101">
+      <data key="v_name">Budvicia</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV188</data>
+      <data key="v_Genus">Budvicia</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0602841132755449</data>
+      <data key="v_louvain.member">21</data>
+    </node>
+    <node id="n102">
+      <data key="v_name">Hymenobacter</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV205</data>
+      <data key="v_Genus">Hymenobacter</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0381451818902487</data>
+      <data key="v_louvain.member">10</data>
+    </node>
+    <node id="n103">
+      <data key="v_name">Luteolibacter</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV213</data>
+      <data key="v_Genus">Luteolibacter</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0444632182701312</data>
+      <data key="v_louvain.member">2</data>
+    </node>
+    <node id="n104">
+      <data key="v_name">Caproiciproducens</data>
+      <data key="v_degree">3</data>
+      <data key="v_ASV">ASV222</data>
+      <data key="v_Genus">Caproiciproducens</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0206054458218052</data>
+      <data key="v_louvain.member">13</data>
+    </node>
+    <node id="n105">
+      <data key="v_name">Clostridiaceae_1</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV225</data>
+      <data key="v_Genus">Clostridiaceae_1</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0200067583135262</data>
+      <data key="v_louvain.member">23</data>
+    </node>
+    <node id="n106">
+      <data key="v_name">Clostridium_sensu_stricto_12</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV251</data>
+      <data key="v_Genus">Clostridium_sensu_stricto_12</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0104075235923024</data>
+      <data key="v_louvain.member">17</data>
+    </node>
+    <node id="n107">
+      <data key="v_name">Weeksellaceae</data>
+      <data key="v_degree">1</data>
+      <data key="v_ASV">ASV252</data>
+      <data key="v_Genus">Weeksellaceae</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.0281901327491257</data>
+      <data key="v_louvain.member">15</data>
+    </node>
+    <node id="n108">
+      <data key="v_name">Labrys</data>
+      <data key="v_degree">2</data>
+      <data key="v_ASV">ASV264</data>
+      <data key="v_Genus">Labrys</data>
+      <data key="v_Domain">Bacteria</data>
+      <data key="v_Abundance">0.00770283914818742</data>
+      <data key="v_louvain.member">6</data>
+    </node>
+    <edge source="n0" target="n5">
+      <data key="e_weight">-0.426639812797587</data>
+      <data key="e_width">0.728152247339415</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.728152247339415</data>
+    </edge>
+    <edge source="n0" target="n15">
+      <data key="e_weight">0.53176696215157</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.426639812797587</data>
+    </edge>
+    <edge source="n0" target="n27">
+      <data key="e_weight">0.411002417100769</data>
+      <data key="e_width">0.683611528387917</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.683611528387917</data>
+    </edge>
+    <edge source="n0" target="n29">
+      <data key="e_weight">0.412222111452776</data>
+      <data key="e_width">0.669248302233028</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.669248302233028</data>
+    </edge>
+    <edge source="n1" target="n27">
+      <data key="e_weight">0.400651799972171</data>
+      <data key="e_width">0.579251676321463</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.579251676321463</data>
+    </edge>
+    <edge source="n2" target="n14">
+      <data key="e_weight">0.579251676321463</data>
+      <data key="e_width">0.53176696215157</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.53176696215157</data>
+    </edge>
+    <edge source="n2" target="n20">
+      <data key="e_weight">0.42427250755415</data>
+      <data key="e_width">0.707723562142226</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.707723562142226</data>
+    </edge>
+    <edge source="n2" target="n44">
+      <data key="e_weight">0.434816271960442</data>
+      <data key="e_width">0.860084832924174</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.860084832924174</data>
+    </edge>
+    <edge source="n2" target="n64">
+      <data key="e_weight">0.539616349433674</data>
+      <data key="e_width">0.736597111205366</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.736597111205366</data>
+    </edge>
+    <edge source="n2" target="n79">
+      <data key="e_weight">0.413371163241054</data>
+      <data key="e_width">0.42427250755415</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.42427250755415</data>
+    </edge>
+    <edge source="n3" target="n4">
+      <data key="e_weight">0.728152247339415</data>
+      <data key="e_width">0.463349377045844</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.463349377045844</data>
+    </edge>
+    <edge source="n3" target="n6">
+      <data key="e_weight">0.683611528387917</data>
+      <data key="e_width">0.410249107013408</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.410249107013408</data>
+    </edge>
+    <edge source="n3" target="n24">
+      <data key="e_weight">0.681305435215436</data>
+      <data key="e_width">0.681305435215436</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.681305435215436</data>
+    </edge>
+    <edge source="n4" target="n6">
+      <data key="e_weight">0.669248302233028</data>
+      <data key="e_width">0.777637578314978</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.777637578314978</data>
+    </edge>
+    <edge source="n4" target="n24">
+      <data key="e_weight">0.777637578314978</data>
+      <data key="e_width">0.594269349076125</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.594269349076125</data>
+    </edge>
+    <edge source="n5" target="n18">
+      <data key="e_weight">0.736597111205366</data>
+      <data key="e_width">0.416139799728408</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.416139799728408</data>
+    </edge>
+    <edge source="n5" target="n33">
+      <data key="e_weight">0.402027725266524</data>
+      <data key="e_width">0.679593542722284</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.679593542722284</data>
+    </edge>
+    <edge source="n5" target="n38">
+      <data key="e_weight">0.417316874872467</data>
+      <data key="e_width">0.691386309645146</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.691386309645146</data>
+    </edge>
+    <edge source="n5" target="n61">
+      <data key="e_weight">0.417681157276793</data>
+      <data key="e_width">0.750928301300386</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.750928301300386</data>
+    </edge>
+    <edge source="n5" target="n69">
+      <data key="e_weight">0.430592738367274</data>
+      <data key="e_width">0.411002417100769</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.411002417100769</data>
+    </edge>
+    <edge source="n6" target="n24">
+      <data key="e_weight">0.594269349076125</data>
+      <data key="e_width">0.400651799972171</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.400651799972171</data>
+    </edge>
+    <edge source="n7" target="n95">
+      <data key="e_weight">0.567535258783805</data>
+      <data key="e_width">0.428355444768356</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.428355444768356</data>
+    </edge>
+    <edge source="n8" target="n70">
+      <data key="e_weight">0.547720135196351</data>
+      <data key="e_width">0.428939022222348</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.428939022222348</data>
+    </edge>
+    <edge source="n8" target="n103">
+      <data key="e_weight">0.412648570565662</data>
+      <data key="e_width">0.412222111452776</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.412222111452776</data>
+    </edge>
+    <edge source="n9" target="n17">
+      <data key="e_weight">0.860084832924174</data>
+      <data key="e_width">0.426607309049581</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.426607309049581</data>
+    </edge>
+    <edge source="n9" target="n64">
+      <data key="e_weight">0.448957910967297</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.507436034353412</data>
+    </edge>
+    <edge source="n9" target="n79">
+      <data key="e_weight">0.433128195552285</data>
+      <data key="e_width">0.411688521716923</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.411688521716923</data>
+    </edge>
+    <edge source="n10" target="n25">
+      <data key="e_weight">0.679593542722284</data>
+      <data key="e_width">0.402027725266524</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.402027725266524</data>
+    </edge>
+    <edge source="n10" target="n26">
+      <data key="e_weight">0.691386309645146</data>
+      <data key="e_width">0.423707432330852</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.423707432330852</data>
+    </edge>
+    <edge source="n11" target="n16">
+      <data key="e_weight">0.707723562142226</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.48089233493669</data>
+    </edge>
+    <edge source="n12" target="n75">
+      <data key="e_weight">0.435945301284314</data>
+      <data key="e_width">0.417316874872467</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.417316874872467</data>
+    </edge>
+    <edge source="n12" target="n108">
+      <data key="e_weight">0.427242581960042</data>
+      <data key="e_width">0.474201822754325</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.474201822754325</data>
+    </edge>
+    <edge source="n13" target="n21">
+      <data key="e_weight">0.463349377045844</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.571425168994628</data>
+    </edge>
+    <edge source="n13" target="n60">
+      <data key="e_weight">0.410003813827935</data>
+      <data key="e_width">0.43967401465472</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.43967401465472</data>
+    </edge>
+    <edge source="n14" target="n23">
+      <data key="e_weight">0.410249107013408</data>
+      <data key="e_width">0.505921718309412</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.505921718309412</data>
+    </edge>
+    <edge source="n15" target="n27">
+      <data key="e_weight">0.428355444768356</data>
+      <data key="e_width">0.42662564230872</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.42662564230872</data>
+    </edge>
+    <edge source="n17" target="n64">
+      <data key="e_weight">0.417263944209152</data>
+      <data key="e_width">0.434816271960442</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.434816271960442</data>
+    </edge>
+    <edge source="n17" target="n79">
+      <data key="e_weight">0.405015884895042</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.440719466251379</data>
+    </edge>
+    <edge source="n18" target="n30">
+      <data key="e_weight">-0.507436034353412</data>
+      <data key="e_width">0.424244305193105</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.424244305193105</data>
+    </edge>
+    <edge source="n18" target="n38">
+      <data key="e_weight">0.474201822754325</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.421869693337852</data>
+    </edge>
+    <edge source="n18" target="n49">
+      <data key="e_weight">0.417297829403377</data>
+      <data key="e_width">0.463125829478389</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.463125829478389</data>
+    </edge>
+    <edge source="n18" target="n61">
+      <data key="e_weight">0.413249112584862</data>
+      <data key="e_width">0.410991876114011</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.410991876114011</data>
+    </edge>
+    <edge source="n18" target="n69">
+      <data key="e_weight">0.428273079820869</data>
+      <data key="e_width">0.417297829403377</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.417297829403377</data>
+    </edge>
+    <edge source="n18" target="n89">
+      <data key="e_weight">0.505380066934664</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.445907603397331</data>
+    </edge>
+    <edge source="n19" target="n28">
+      <data key="e_weight">0.428939022222348</data>
+      <data key="e_width">0.424100232946814</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.424100232946814</data>
+    </edge>
+    <edge source="n19" target="n73">
+      <data key="e_weight">0.479003390889953</data>
+      <data key="e_width">0.59854949587309</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.59854949587309</data>
+    </edge>
+    <edge source="n19" target="n102">
+      <data key="e_weight">0.427204867468224</data>
+      <data key="e_width">0.517425261237058</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.517425261237058</data>
+    </edge>
+    <edge source="n20" target="n34">
+      <data key="e_weight">0.423707432330852</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.450131011174166</data>
+    </edge>
+    <edge source="n22" target="n24">
+      <data key="e_weight">0.416139799728408</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.400401456965936</data>
+    </edge>
+    <edge source="n23" target="n70">
+      <data key="e_weight">0.403112650723931</data>
+      <data key="e_width">0.449328264183772</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.449328264183772</data>
+    </edge>
+    <edge source="n25" target="n26">
+      <data key="e_weight">0.750928301300386</data>
+      <data key="e_width">0.651856854259308</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.651856854259308</data>
+    </edge>
+    <edge source="n26" target="n82">
+      <data key="e_weight">0.502180256036212</data>
+      <data key="e_width">0.412680723823269</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.412680723823269</data>
+    </edge>
+    <edge source="n27" target="n29">
+      <data key="e_weight">0.426607309049581</data>
+      <data key="e_width">0.407184028556101</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.407184028556101</data>
+    </edge>
+    <edge source="n28" target="n83">
+      <data key="e_weight">0.413937964606299</data>
+      <data key="e_width">0.504476005006143</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.504476005006143</data>
+    </edge>
+    <edge source="n30" target="n34">
+      <data key="e_weight">-0.48089233493669</data>
+      <data key="e_width">0.401904504115292</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.401904504115292</data>
+    </edge>
+    <edge source="n30" target="n38">
+      <data key="e_weight">-0.571425168994628</data>
+      <data key="e_width">0.457654345756014</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.457654345756014</data>
+    </edge>
+    <edge source="n30" target="n44">
+      <data key="e_weight">-0.440719466251379</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.427359761197999</data>
+    </edge>
+    <edge source="n30" target="n45">
+      <data key="e_weight">-0.421869693337852</data>
+      <data key="e_width">0.410003813827935</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.410003813827935</data>
+    </edge>
+    <edge source="n30" target="n49">
+      <data key="e_weight">-0.445907603397331</data>
+      <data key="e_width">0.417681157276793</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.417681157276793</data>
+    </edge>
+    <edge source="n30" target="n61">
+      <data key="e_weight">-0.478748363113072</data>
+      <data key="e_width">0.413249112584862</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.413249112584862</data>
+    </edge>
+    <edge source="n30" target="n63">
+      <data key="e_weight">0.420446464334185</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.478748363113072</data>
+    </edge>
+    <edge source="n30" target="n71">
+      <data key="e_weight">0.425607249626308</data>
+      <data key="e_width">0.588547585374922</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.588547585374922</data>
+    </edge>
+    <edge source="n30" target="n77">
+      <data key="e_weight">0.442306018101439</data>
+      <data key="e_width">0.464261102510795</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.464261102510795</data>
+    </edge>
+    <edge source="n30" target="n100">
+      <data key="e_weight">0.497942034319405</data>
+      <data key="e_width">0.420446464334185</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.420446464334185</data>
+    </edge>
+    <edge source="n30" target="n104">
+      <data key="e_weight">0.403565014010917</data>
+      <data key="e_width">0.539616349433674</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.539616349433674</data>
+    </edge>
+    <edge source="n31" target="n32">
+      <data key="e_weight">0.411688521716923</data>
+      <data key="e_width">0.448957910967297</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.448957910967297</data>
+    </edge>
+    <edge source="n31" target="n84">
+      <data key="e_weight">0.494564806026557</data>
+      <data key="e_width">0.417263944209152</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.417263944209152</data>
+    </edge>
+    <edge source="n32" target="n65">
+      <data key="e_weight">0.401767250531042</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.419529196167951</data>
+    </edge>
+    <edge source="n32" target="n87">
+      <data key="e_weight">0.402850511623893</data>
+      <data key="e_width">0.401767250531042</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.401767250531042</data>
+    </edge>
+    <edge source="n33" target="n59">
+      <data key="e_weight">-0.427359761197999</data>
+      <data key="e_width">0.506512502955822</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.506512502955822</data>
+    </edge>
+    <edge source="n34" target="n50">
+      <data key="e_weight">0.517425261237058</data>
+      <data key="e_width">0.423979718735654</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.423979718735654</data>
+    </edge>
+    <edge source="n34" target="n51">
+      <data key="e_weight">-0.450131011174166</data>
+      <data key="e_width">0.430592738367274</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.430592738367274</data>
+    </edge>
+    <edge source="n34" target="n71">
+      <data key="e_weight">-0.457426552523431</data>
+      <data key="e_width">0.428273079820869</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.428273079820869</data>
+    </edge>
+    <edge source="n35" target="n38">
+      <data key="e_weight">0.43967401465472</data>
+      <data key="e_width">0.547720135196351</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.547720135196351</data>
+    </edge>
+    <edge source="n36" target="n40">
+      <data key="e_weight">0.505921718309412</data>
+      <data key="e_width">0.403112650723931</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.403112650723931</data>
+    </edge>
+    <edge source="n36" target="n53">
+      <data key="e_weight">0.449328264183772</data>
+      <data key="e_width">0.425607249626308</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.425607249626308</data>
+    </edge>
+    <edge source="n37" target="n56">
+      <data key="e_weight">0.504476005006143</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.457426552523431</data>
+    </edge>
+    <edge source="n37" target="n80">
+      <data key="e_weight">0.406864561975398</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.409124984144248</data>
+    </edge>
+    <edge source="n38" target="n44">
+      <data key="e_weight">0.424244305193105</data>
+      <data key="e_width">0.435364691262378</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.435364691262378</data>
+    </edge>
+    <edge source="n38" target="n45">
+      <data key="e_weight">0.463125829478389</data>
+      <data key="e_width">0.477296579668616</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.477296579668616</data>
+    </edge>
+    <edge source="n38" target="n49">
+      <data key="e_weight">0.424100232946814</data>
+      <data key="e_width">0.500588395920906</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.500588395920906</data>
+    </edge>
+    <edge source="n38" target="n61">
+      <data key="e_weight">0.588547585374922</data>
+      <data key="e_width">0.595188284455595</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.595188284455595</data>
+    </edge>
+    <edge source="n38" target="n71">
+      <data key="e_weight">-0.409124984144248</data>
+      <data key="e_width">0.479003390889953</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.479003390889953</data>
+    </edge>
+    <edge source="n38" target="n104">
+      <data key="e_weight">-0.418935135559928</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.415016174580315</data>
+    </edge>
+    <edge source="n39" target="n41">
+      <data key="e_weight">0.42662564230872</data>
+      <data key="e_width">0.435945301284314</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.435945301284314</data>
+    </edge>
+    <edge source="n39" target="n47">
+      <data key="e_weight">0.410991876114011</data>
+      <data key="e_width">0.436887425530829</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.436887425530829</data>
+    </edge>
+    <edge source="n39" target="n75">
+      <data key="e_weight">0.436887425530829</data>
+      <data key="e_width">0.5819506854098</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.5819506854098</data>
+    </edge>
+    <edge source="n40" target="n54">
+      <data key="e_weight">0.651856854259308</data>
+      <data key="e_width">0.410821344542144</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.410821344542144</data>
+    </edge>
+    <edge source="n41" target="n49">
+      <data key="e_weight">0.59854949587309</data>
+      <data key="e_width">0.470311714083382</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.470311714083382</data>
+    </edge>
+    <edge source="n41" target="n66">
+      <data key="e_weight">0.506512502955822</data>
+      <data key="e_width">0.442306018101439</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.442306018101439</data>
+    </edge>
+    <edge source="n42" target="n51">
+      <data key="e_weight">-0.400401456965936</data>
+      <data key="e_width">0.446749538532089</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.446749538532089</data>
+    </edge>
+    <edge source="n43" target="n76">
+      <data key="e_weight">0.470311714083382</data>
+      <data key="e_width">0.413371163241054</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.413371163241054</data>
+    </edge>
+    <edge source="n45" target="n58">
+      <data key="e_weight">0.401904504115292</data>
+      <data key="e_width">0.433128195552285</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.433128195552285</data>
+    </edge>
+    <edge source="n45" target="n61">
+      <data key="e_weight">0.464261102510795</data>
+      <data key="e_width">0.405015884895042</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.405015884895042</data>
+    </edge>
+    <edge source="n46" target="n99">
+      <data key="e_weight">0.428878520272635</data>
+      <data key="e_width">0.406864561975398</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.406864561975398</data>
+    </edge>
+    <edge source="n47" target="n75">
+      <data key="e_weight">0.5819506854098</data>
+      <data key="e_width">0.405270143641267</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.405270143641267</data>
+    </edge>
+    <edge source="n47" target="n106">
+      <data key="e_weight">0.414747606695407</data>
+      <data key="e_width">0.445134093731627</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.445134093731627</data>
+    </edge>
+    <edge source="n48" target="n72">
+      <data key="e_weight">0.595188284455595</data>
+      <data key="e_width">0.502180256036212</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.502180256036212</data>
+    </edge>
+    <edge source="n51" target="n54">
+      <data key="e_weight">0.412680723823269</data>
+      <data key="e_width">0.413937964606299</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.413937964606299</data>
+    </edge>
+    <edge source="n51" target="n64">
+      <data key="e_weight">-0.419529196167951</data>
+      <data key="e_width">0.494564806026557</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.494564806026557</data>
+    </edge>
+    <edge source="n51" target="n71">
+      <data key="e_weight">0.435364691262378</data>
+      <data key="e_width">0.403979424957638</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.403979424957638</data>
+    </edge>
+    <edge source="n51" target="n107">
+      <data key="e_weight">0.406091742842867</data>
+      <data key="e_width">0.437998426036341</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.437998426036341</data>
+    </edge>
+    <edge source="n52" target="n55">
+      <data key="e_weight">0.407184028556101</data>
+      <data key="e_width">0.402534879746909</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.402534879746909</data>
+    </edge>
+    <edge source="n52" target="n71">
+      <data key="e_weight">0.477296579668616</data>
+      <data key="e_width">0.402850511623893</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.402850511623893</data>
+    </edge>
+    <edge source="n52" target="n81">
+      <data key="e_weight">0.405270143641267</data>
+      <data key="e_width">0.432575990744134</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.432575990744134</data>
+    </edge>
+    <edge source="n52" target="n98">
+      <data key="e_weight">0.409460553527023</data>
+      <data key="e_width">0.505380066934664</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.505380066934664</data>
+    </edge>
+    <edge source="n52" target="n100">
+      <data key="e_weight">0.459923404976942</data>
+      <data key="e_width">0.406690445884875</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.406690445884875</data>
+    </edge>
+    <edge source="n55" target="n88">
+      <data key="e_weight">0.432575990744134</data>
+      <data key="e_width">0.445092099666387</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.445092099666387</data>
+    </edge>
+    <edge source="n56" target="n85">
+      <data key="e_weight">0.403979424957638</data>
+      <data key="e_width">0.426276649649935</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.426276649649935</data>
+    </edge>
+    <edge source="n56" target="n99">
+      <data key="e_weight">0.439268884423379</data>
+      <data key="e_width">0.644046160005794</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.644046160005794</data>
+    </edge>
+    <edge source="n57" target="n58">
+      <data key="e_weight">0.457654345756014</data>
+      <data key="e_width">0.40370075245395</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.40370075245395</data>
+    </edge>
+    <edge source="n57" target="n68">
+      <data key="e_weight">0.423979718735654</data>
+      <data key="e_width">0.448923203743762</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.448923203743762</data>
+    </edge>
+    <edge source="n61" target="n89">
+      <data key="e_weight">0.406690445884875</data>
+      <data key="e_width">0.419521114089155</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.419521114089155</data>
+    </edge>
+    <edge source="n62" target="n101">
+      <data key="e_weight">0.433065251500441</data>
+      <data key="e_width">0.435258180314054</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.435258180314054</data>
+    </edge>
+    <edge source="n63" target="n71">
+      <data key="e_weight">0.500588395920906</data>
+      <data key="e_width">0.567535258783805</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.567535258783805</data>
+    </edge>
+    <edge source="n63" target="n104">
+      <data key="e_weight">0.413535334389029</data>
+      <data key="e_width">0.408636255664263</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.408636255664263</data>
+    </edge>
+    <edge source="n64" target="n91">
+      <data key="e_weight">0.644046160005794</data>
+      <data key="e_width">0.41469599767029</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.41469599767029</data>
+    </edge>
+    <edge source="n67" target="n99">
+      <data key="e_weight">0.490991719422852</data>
+      <data key="e_width">0.42241149257413</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.42241149257413</data>
+    </edge>
+    <edge source="n68" target="n78">
+      <data key="e_weight">0.446749538532089</data>
+      <data key="e_width">0.409460553527023</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.409460553527023</data>
+    </edge>
+    <edge source="n68" target="n92">
+      <data key="e_weight">0.40370075245395</data>
+      <data key="e_width">0.428878520272635</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.428878520272635</data>
+    </edge>
+    <edge source="n69" target="n89">
+      <data key="e_weight">0.445092099666387</data>
+      <data key="e_width">0.439268884423379</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.439268884423379</data>
+    </edge>
+    <edge source="n71" target="n74">
+      <data key="e_weight">-0.415016174580315</data>
+      <data key="e_width">0.490991719422852</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.490991719422852</data>
+    </edge>
+    <edge source="n71" target="n81">
+      <data key="e_weight">0.445134093731627</data>
+      <data key="e_width">0.474769520239015</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.474769520239015</data>
+    </edge>
+    <edge source="n74" target="n75">
+      <data key="e_weight">0.410821344542144</data>
+      <data key="e_width">0.497942034319405</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.497942034319405</data>
+    </edge>
+    <edge source="n74" target="n86">
+      <data key="e_weight">0.402534879746909</data>
+      <data key="e_width">0.459923404976942</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.459923404976942</data>
+    </edge>
+    <edge source="n75" target="n90">
+      <data key="e_weight">0.426276649649935</data>
+      <data key="e_width">0.512963412075474</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.512963412075474</data>
+    </edge>
+    <edge source="n76" target="n93">
+      <data key="e_weight">0.448923203743762</data>
+      <data key="e_width">0.433065251500441</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.433065251500441</data>
+    </edge>
+    <edge source="n77" target="n100">
+      <data key="e_weight">0.512963412075474</data>
+      <data key="e_width">0.427204867468224</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.427204867468224</data>
+    </edge>
+    <edge source="n80" target="n97">
+      <data key="e_weight">0.408636255664263</data>
+      <data key="e_width">0.412648570565662</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.412648570565662</data>
+    </edge>
+    <edge source="n82" target="n85">
+      <data key="e_weight">0.437998426036341</data>
+      <data key="e_width">0.403565014010917</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.403565014010917</data>
+    </edge>
+    <edge source="n85" target="n99">
+      <data key="e_weight">0.474769520239015</data>
+      <data key="e_width">0</data>
+      <data key="e_sign">Negative</data>
+      <data key="e_scale">0.418935135559928</data>
+    </edge>
+    <edge source="n89" target="n94">
+      <data key="e_weight">0.419521114089155</data>
+      <data key="e_width">0.413535334389029</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.413535334389029</data>
+    </edge>
+    <edge source="n92" target="n94">
+      <data key="e_weight">0.435258180314054</data>
+      <data key="e_width">0.439246043594805</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.439246043594805</data>
+    </edge>
+    <edge source="n92" target="n97">
+      <data key="e_weight">0.41469599767029</data>
+      <data key="e_width">0.414747606695407</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.414747606695407</data>
+    </edge>
+    <edge source="n94" target="n97">
+      <data key="e_weight">0.42241149257413</data>
+      <data key="e_width">0.406091742842867</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.406091742842867</data>
+    </edge>
+    <edge source="n96" target="n105">
+      <data key="e_weight">0.439246043594805</data>
+      <data key="e_width">0.427242581960042</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.427242581960042</data>
+    </edge>
+    <edge source="n99" target="n108">
+      <data key="e_weight">0.49705014973251</data>
+      <data key="e_width">0.49705014973251</data>
+      <data key="e_sign">Positive</data>
+      <data key="e_scale">0.49705014973251</data>
+    </edge>
+  </graph>
+</graphml>
