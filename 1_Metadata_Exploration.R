@@ -34,8 +34,8 @@ moss.euk.a <- readRDS("rds/SMP_moss20.euk.a.RDS")
 ################################################################################
 ### nMDS pitchers
 ## Choose pro- or eukaryotes
-primer <- "16S"
-# primer <- "18S"
+# primer <- "16S"
+primer <- "18S"
 
 
 if(primer == "16S") {
@@ -67,15 +67,11 @@ plot_ordination(smp, smp.nmds, shape = "Succession", color = "Site",
         legend.box = "vertical") +
   xlab("nMDS1") +
   ylab("nMDS2")
-# ggsave("SMP_16S_nMDS_ASV.pdf", width = 8.27, height = 8.27)
-# ggsave("SMP_18S_nMDS_ASV.pdf", width = 8.27, height = 8.27)
+# ggsave("img/SMP_16S_nMDS_ASV.pdf", width = 8.27, height = 8.27)
+# ggsave("img/SMP_18S_nMDS_ASV.pdf", width = 8.27, height = 8.27)
 
 
 ### nMDS pitchers and mosses
-## Choose pro- or eukaryotes
-primer <- "16S"
-# primer <- "18S"
-
 if(primer == "16S") {
   smp.moss <- merge_phyloseq(prok.a, moss.prok.a)
 } else if(primer == "18S") {
@@ -96,7 +92,8 @@ stressplot(smp.moss.nmds)
 
 
 ## Plot nMDS
-plot_ordination(smp.moss, smp.moss.nmds, shape = "Site", color = "Succession",
+plot_ordination(smp.moss, smp.moss.nmds,
+                shape = "Site", color = "Succession",
                 title = NULL, axes = 1:2) +
   stat_ellipse(aes(group = Succession), type = "t", linetype = 2, size = 0.2) +
   geom_point(size = 3) +
@@ -106,8 +103,8 @@ plot_ordination(smp.moss, smp.moss.nmds, shape = "Site", color = "Succession",
         legend.box = "vertical") +
   xlab("nMDS1") +
   ylab("nMDS2")
-# ggsave("SMP_16S_nMDS_withMoss.pdf", width = 8.27, height = 8.27)
-# ggsave("SMP_18S_nMDS_withMoss.pdf", width = 8.27, height = 8.27)
+# ggsave("img/SMP_16S_nMDS_withMoss.pdf", width = 8.27, height = 8.27)
+# ggsave("img/SMP_18S_nMDS_withMoss.pdf", width = 8.27, height = 8.27)
 
 
 ################################################################################
@@ -132,10 +129,9 @@ rm(tax.l, otu.l)
 tax.otu.l[, -c(1:7)] <- log1p(tax.otu.l[, -c(1:7)])
 
 
-tax.otu.lm <- reshape2::melt(tax.otu.l, id.vars = c("Taxa", "Domain",
-                                                    "Phylum", "Class",
-                                                    "Order", "Family",
-                                                    "Genus"),
+tax.otu.lm <- reshape2::melt(tax.otu.l,
+                             id.vars = c("Taxa", "Domain", "Phylum", "Class",
+                                         "Order", "Family", "Genus"),
                              variable.name = "FullID", value.name = "Count")
 tax.otu.lm$Site <- substr(tax.otu.lm$FullID, 1, 2)
 tax.otu.lm$Site <- ordered(tax.otu.lm$Site,
@@ -149,45 +145,46 @@ tax.otu.lm$Domain[tax.otu.lm$Domain == "Archaea"] <- "A."
 tax.otu.lm[, c(2:7)] <- lapply(tax.otu.lm[, c(2:7)], as.factor)
 
 
-tax <- c("Crenarchaeota", ## Archaea
+
+tax <- c("Thaumarchaeota", ## Archaea
          ## Proteobacteria
-         "Bdellovibrionota", "Campilobacterota", "Desulfobacterota",
-         "Proteobacteria",
-         "Myxococcota", ## Deltaproteobacteria
-         "Planctomycetota", "Verrucomicrobiota", ## PVC group
-         "Gemmatimonadota", ## FCB group
+         "Proteobacteria", "Epsilonbacteraeota",
+         "Chlamydiae", "Planctomycetes", "Verrucomicrobia", ## PVC group
+         "Gemmatimonadetes", ## FCB group
          ## Singles
-         "Acidobacteriota", "Bacteroidota", "Chloroflexi", "Dependentiae",
+         "Acidobacteria", "Bacteroidetes", "Chloroflexi", "Dependentiae",
          ## Terrabacteria
-         "Actinobacteriota", "Armatimonadota", "Cyanobacteria", "Firmicutes",
+         "Actinobacteria", "Armatimonadetes", "Cyanobacteria", "Firmicutes",
          "WPS-2", ## ?
-         "Amoebozoa_ph", "Schizoplasmodiida", ## Amoeba
+         "Schizoplasmodiida", "Discosea", ## Amoeba
          ## SAR:Heterokonta
-         "Diatomea", "Bicosoecida", "Ochrophyta_ph", "Peronosporomycetes",
-         "Cercozoa", "Retaria", ## SAR: Rhizaria
+         "Bicosoecida", "Ochrophyta", "Peronosporomycetes",
+         "Cercozoa", ## SAR: Rhizaria
          ## Harosa:Alveolata
          "Ciliophora", "Dinoflagellata", "Protalveolata",
          "Euglenozoa", "Heterolobosea", ## Excavata
-         "Chlorophyta_ph", "Cryptophyceae_ph", ## Algae
+         ## Algae
+         "Chlorophyta_ph", "Phragmoplastophyta",
+         "Cryptomonadales", "Florideophycidae",
          "Nucleariidae_and_Fonticula_group", ## Holomycota
          ## Fungi
          "Ascomycota", "Basidiomycota", "Blastocladiomycota", "Chytridiomycota",
-         "Cryptomycota", "Zoopagomycota",
-         "Holozoa_ph", ## Choanozoa
+         "Opisthokonta_ph", "Cryptomycota", "Zoopagomycota",
+         "Choanoflagellida", ## Choanozoa
          ## Metazoa
-         "Annelida", "Platyhelminthes", "Nematozoa", "Rotifera", "Tardigrada",
+         "Annelida", "Platyhelminthes", "Nematoda", "Rotifera", "Tardigrada",
          "Arthropoda")
 
 
-## Pronounce small values even more
-tax.otu.lm$Count[tax.otu.lm$Count < 0.1 & tax.otu.lm$Count > 0] <- 0.1
-
+## Pronounce small values (otherwise they will be barely visible)
+summary(tax.otu.lm$Count[tax.otu.lm$Count < 0.1])
+tax.otu.lm$Count[tax.otu.lm$Count < 0.1] <- 0.1
 summary(tax.otu.lm$Count)
 
 
 ## Plot
-ggplot(tax.otu.lm, aes(x = factor(Phylum, level = rev(tax)), y = Count,
-                       fill = Site)) +
+ggplot(tax.otu.lm, aes(x = factor(Phylum, level = rev(tax)),
+                       y = Count, fill = Site)) +
   geom_bar(stat = "identity") +
   facet_grid(Domain ~ Succession, scales = "free_y", space = "free_y") +
   scale_fill_manual(values = gradCol) +
@@ -197,10 +194,10 @@ ggplot(tax.otu.lm, aes(x = factor(Phylum, level = rev(tax)), y = Count,
   xlab("") +
   coord_flip() +
   theme_bw(base_size = 15)
-# ggsave("SMP_PhylaOverview.pdf", width = 8.27, height = 11.69)
+# ggsave("img/SMP_PhylaOverview.pdf", width = 8.27, height = 11.69)
 
 
-# aggregate(Count ~ Class, data = tax.otu.lm, FUN = sum)
+aggregate(Count ~ Class, data = tax.otu.lm, FUN = sum)
 
 
 ### Inspect taxa and frequencies
@@ -246,4 +243,4 @@ ggplot(inc, aes(x = Phylum, y = IncidencePercent)) +
   xlab("") +
   coord_flip() +
   theme_bw(base_size = 10)
-# ggsave("SMP_Incidence.pdf", width = 8.27, height = 11.69 / 2)
+# ggsave("img/SMP_Incidence.pdf", width = 8.27, height = 11.69 / 2)

@@ -35,7 +35,7 @@ empty <- smpMeta.df[smpMeta.df$prey.items == 0, ]
 rownames(empty)
 
 
-smp.e <- prune_samples(smp@sam_data$FullID  %in% rownames(empty), smp)
+smp.e <- prune_samples(smp@sam_data$FullID %in% rownames(empty), smp)
 
 
 ## Remove empty taxa
@@ -61,10 +61,9 @@ rm(tax.l, otu.l)
 tax.otu.l[, -c(1:7)] <- log1p(tax.otu.l[, -c(1:7)])
 
 
-tax.otu.lm <- reshape2::melt(tax.otu.l, id.vars = c("Taxa", "Domain",
-                                                    "Phylum", "Class",
-                                                    "Order", "Family",
-                                                    "Genus"),
+tax.otu.lm <- reshape2::melt(tax.otu.l,
+                             id.vars = c("Taxa", "Domain", "Phylum", "Class",
+                                         "Order", "Family", "Genus"),
                              variable.name = "FullID", value.name = "Count")
 tax.otu.lm$Site <- substr(tax.otu.lm$FullID, 1, 2)
 tax.otu.lm$Site <- ordered(tax.otu.lm$Site,
@@ -80,25 +79,30 @@ tax.otu.lm$FullID <- ordered(tax.otu.lm$FullID,
 ## Reorder taxonomically
 tax.otu.lm[, c(2:7)] <- lapply(tax.otu.lm[, c(2:7)], as.factor)
 
+# setdiff(tax, sort(unique(tax.otu.lm$Phylum)))
 
-tax <- c("Crenarchaeota",
+tax <- c("Thaumarchaeota", ## Archaea
          ## Proteobacteria
-         "Bdellovibrionota", "Desulfobacterota", "Proteobacteria",
-         "Myxococcota", "Planctomycetota", ## Deltaproteobacteria
-         "Verrucomicrobiota", ## PVC group
-         "Gemmatimonadota",
+         "Proteobacteria",
+         "Chlamydiae", "Planctomycetes", "Verrucomicrobia", ## PVC group
+         "Gemmatimonadetes", ## FCB group
          ## Singles
-         "Acidobacteriota", "Bacteroidota", "Chloroflexi",
+         "Acidobacteria", "Bacteroidetes", "Chloroflexi",
          ## Terrabacteria
-         "Actinobacteriota", "Armatimonadota", "Firmicutes",
+         "Actinobacteria", "Armatimonadetes", "Cyanobacteria", "Firmicutes",
          ## SAR:Heterokonta
-         "Bicosoecida", "Ochrophyta_ph", "Peronosporomycetes",
+         "Ochrophyta", "Peronosporomycetes",
          "Cercozoa", ## SAR: Rhizaria
-         "Ciliophora", ## Harosa:Alveolata
+         ## Harosa:Alveolata
+         "Ciliophora",
          "Euglenozoa", ## Excavata
-         "Chlorophyta_ph", ## Algae
-         "Basidiomycota", "Chytridiomycota", ## Fungi
-         "Holozoa_ph", ## Choanozoa
+         ## Algae
+         "Chlorophyta_ph",
+         ## Fungi
+         "Basidiomycota",  "Chytridiomycota",
+         "Zoopagomycota",
+         "Choanoflagellida", ## Choanozoa
+         ## Metazoa
          "Arthropoda")
 
 
@@ -118,35 +122,38 @@ ggplot(tax.otu.lm, aes(x = factor(Phylum, level = rev(tax)), y = Count,
   ylab(expression(paste(ln[e], "(Relative abundance + 1)"))) +
   xlab("") +
   coord_flip()
-# ggsave("SMP_Preyfree.pdf", width = 8.27, height = 6)
+# ggsave("img/SMP_Preyfree.pdf", width = 8.27, height = 6)
 
 
 ################################################################################
 ### nMDS
 ## Select domain
-# ps <- prok.a
-ps <- euk.a
+ps <- prok.a
+# ps <- euk.a
 
 
 ## Group insect counts
+sample_data(ps)$prey.items.char <- sample_data(ps)$prey.items
+sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 5 &
+                                  sample_data(ps)$prey.items < 11] <- "6 - 10"
+sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 10 &
+                                  sample_data(ps)$prey.items < 21] <- "11 - 20"
+sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 20 &
+                                  sample_data(ps)$prey.items < 31] <- "21 - 30"
+sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 30 &
+                                  sample_data(ps)$prey.items < 51] <- "31 - 50"
+sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 50 &
+                                  sample_data(ps)$prey.items < 71] <- "51 - 70"
+sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 70] <- "> 70"
+
+sample_data(ps)$prey.items <- sample_data(ps)$prey.items.char
+# sample_data(ps)$prey.items.char <- NULL
+
 sample_data(ps)$prey.items <- as.factor(sample_data(ps)$prey.items)
 levels(sample_data(ps)$prey.items) <- c("0", "1", "2", "3", "4", "5",
-                                           "6 - 10", "6 - 10",
-                                           "6 - 10", "6 - 10", "6 - 10",
-                                           "11 - 20", "11 - 20", "11 - 20",
-                                           "11 - 20", "11 - 20", "11 - 20",
-                                           "11 - 20", "11 - 20", "11 - 20",
-                                           "11 - 20", "21 - 30", "21 - 30",
-                                           "21 - 30", "21 - 30", "21 - 30",
-                                           "21 - 30", "21 - 30", "21 - 30",
-                                           "31 - 50", "31 - 50", "31 - 50",
-                                           "31 - 50", "31 - 50", "31 - 50",
-                                           "31 - 50", "31 - 50", "31 - 50",
-                                           "31 - 50", "31 - 50", "51 - 70",
-                                           "51 - 70", "51 - 70", "51 - 70",
-                                           "51 - 70", "51 - 70", "51 - 70",
-                                           "71 - 87", "71 - 87", "71 - 87",
-                                           "71 - 87")
+                                        "11 - 20", "21 - 30", "31 - 50",
+                                        "51 - 70", "71 - 87", "71 - 87",
+                                        "71 - 87", "> 70")
 
 
 smp.log <- transform_sample_counts(ps, function(otu) {log1p(otu)})
@@ -172,8 +179,8 @@ plot_ordination(ps, smp.nmds, shape = "Site", color = "prey.items",
         legend.box = "vertical") +
   xlab("nMDS1") +
   ylab("nMDS2")
-# ggsave("SMP_16S_nMDS_Prey.pdf", width = 8.27, height = 8.27)
-# ggsave("SMP_18S_nMDS_Prey.pdf", width = 8.27, height = 8.27)
+# ggsave("img/SMP_16S_nMDS_Prey.pdf", width = 8.27, height = 8.27)
+# ggsave("img/SMP_18S_nMDS_Prey.pdf", width = 8.27, height = 8.27)
 
 
 ################################################################################
@@ -202,8 +209,8 @@ prey <- log1p(prey)
 
 
 ## Pro- or eukaryotes
-# smp.a <- prok.a
-smp.a <- euk.a
+smp.a <- prok.a
+# smp.a <- euk.a
 
 
 ## Subset microbiome to samples with prey only
@@ -242,3 +249,4 @@ summary(pCoCA.smp.1)
 
 ### Explained variance
 pCoCA.smp.sum <- summary(pCoCA.smp)
+

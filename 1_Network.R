@@ -105,7 +105,7 @@ V(g3)$degree <- degree(g3) # connectivity
 
 ## Get pairwise correlations
 otus.cor[lower.tri(otus.cor, diag = TRUE)] <- NA
-otus.cor.m <- melt(otus.cor, value.name = "rho")
+otus.cor.m <- reshape2::melt(otus.cor, value.name = "rho")
 otus.cor.m$rho[otus.cor.m$rho == 0] <- NA
 otus.cor.m <- otus.cor.m[complete.cases(otus.cor.m), ]
 

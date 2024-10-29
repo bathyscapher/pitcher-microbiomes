@@ -1,10 +1,4 @@
-################################################################################
-################################################################################
-################################################################################
-################################################################################
 ### SMP samples prey: format and export
-### Author: korn@cumulonimbus.at University of Fribourg 2020
-################################################################################
 
 
 library("ggplot2")
@@ -28,7 +22,10 @@ gradCol <- c("#D55E00", "#E69F00", "#F0E442", "#009E73", "#56B4E9")
 
 
 ## Read csv files
-prey.l <- lapply(list.files(pattern = glob2rx("SMP_2020*.csv")), read.delim)
+prey.l <- lapply(list.files(pattern = glob2rx("SMP_2020*.csv"),
+                            path = "csv",
+                            full.names = T),
+                 read.delim)
 
 
 ## Reformat and bring into a single df
@@ -91,7 +88,8 @@ prey <- Filter(function(x) !(all(x == 0)), prey)
 
 
 ## Convert into long form
-prey.m <- reshape2::melt(prey, id.vars = c("Site", "FullID"))
+prey.m <- reshape2::melt(prey,
+                         id.vars = c("Site", "FullID"))
 names(prey.m)[3:4] <- c("Order", "Count")
 names(prey.m)
 
@@ -102,7 +100,9 @@ levels(prey.m$Order)
 
 ### Prey per site and order
 ggplot(data = prey.m) +
-  geom_bar(aes(x = reorder(Order, -Count, sum), y = Count, fill = Site),
+  geom_bar(aes(x = reorder(Order, -Count, sum),
+               y = Count,
+               fill = Site),
            stat = "identity") +
   theme(legend.position = "top", legend.direction = "horizontal",
         legend.title = element_blank(),
@@ -112,7 +112,7 @@ ggplot(data = prey.m) +
   scale_y_continuous(breaks = c(0, 1, 10, 100, 1000, 2000)) +
   ylab(expression(log[e](Counts))) +
   xlab("")
-# ggsave("../SMP_Prey.pdf", width = 11.69, height = 6.27)
+# ggsave("img/SMP_Prey.pdf", width = 11.69, height = 6.27)
 
 
 ## Number of prey per sample
@@ -127,7 +127,8 @@ levels(prey.sum$Succession) <- c("Early", "Late")
 
 ggplot(prey.sum, aes(x = Succession, y = x)) +
   geom_boxplot(size = 0.2, outlier.shape = NA) +
-  geom_jitter(aes(col = Site, shape = Succession), height = 0, width = 0.3) +
+  geom_jitter(aes(col = Site, shape = Succession),
+              height = 0, width = 0.3) +
   facet_grid( ~ Site, scales = "free_x") +
   scale_color_manual(values = gradCol) +
   theme(legend.position = "top", legend.direction = "horizontal",
@@ -135,10 +136,4 @@ ggplot(prey.sum, aes(x = Succession, y = x)) +
   scale_y_continuous(breaks = seq(0, 90, 20)) +
   xlab("") +
   ylab("Count")
-# ggsave("../SMP_Prey_Counts.pdf", width = 11.69, height = 5)
-
-
-################################################################################
-################################################################################
-################################################################################
-################################################################################
+# ggsave("img/SMP_Prey_Counts.pdf", width = 11.69, height = 5)

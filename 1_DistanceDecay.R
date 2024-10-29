@@ -92,7 +92,7 @@ distance$FullID <- NULL
 distance[lower.tri(distance)] <- NA
 diag(distance) <- NA
 
-distance.m <- melt(as.matrix(distance), value.name = "Geo_distance")
+distance.m <- reshape2::melt(as.matrix(distance), value.name = "Geo_distance")
 distance.m <- distance.m[complete.cases(distance.m), ]
 distance.m$Pair <- as.factor(paste(distance.m$Var1, distance.m$Var2, sep = "-"))
 
@@ -104,7 +104,7 @@ bc.p[lower.tri(bc.p)] <- NA
 diag(bc.p) <- NA
 
 
-bc.pm <- melt(bc.p, value.name = "BC_distance")
+bc.pm <- reshape2::melt(bc.p, value.name = "BC_distance")
 bc.pm <- bc.pm[complete.cases(bc.pm), ]
 bc.pm$Pair <- as.factor(paste(bc.pm$Var1, bc.pm$Var2, sep = "-"))
 bc.pm$Domain <- "Prokaryotes"
@@ -116,7 +116,7 @@ bc.e[lower.tri(bc.e)] <- NA
 diag(bc.e) <- NA
 
 
-bc.em <- melt(bc.e, value.name = "BC_distance")
+bc.em <- reshape2::melt(bc.e, value.name = "BC_distance")
 bc.em <- bc.em[complete.cases(bc.em), ]
 bc.em$Pair <- as.factor(paste(bc.em$Var1, bc.em$Var2, sep = "-"))
 bc.em$Domain <- "Eukaryotes"
@@ -186,7 +186,7 @@ ggplot(bc.distance, aes(x = round(log1p(Geo_distance), digits = 1),
   theme(legend.position = "top") +
   xlab(expression(paste(italic(ln), "(Geographical distance + 1) [m]")))  +
   ylab("Bray-Curtis dissimilarity")
-# ggsave("SMP_DistanceDecay_bin.pdf", width = 11.69, height = 6.5)
+# ggsave("img/SMP_DistanceDecay_bin.pdf", width = 11.69, height = 6.5)
 
 
 ## Regression coefficients
@@ -200,8 +200,8 @@ summary(dd.fit)
 
 ### BC distance sorted by median
 ## Subset by domain (change for Prok- and Eukaryotes, respectively)
-bc.distance.d <- bc.distance[bc.distance$Domain == "Prokaryotes", ]
-# bc.distance.d <- bc.distance[bc.distance$Domain == "Eukaryotes", ]
+# bc.distance.d <- bc.distance[bc.distance$Domain == "Prokaryotes", ]
+bc.distance.d <- bc.distance[bc.distance$Domain == "Eukaryotes", ]
 
 
 ## Sort by median
@@ -227,11 +227,11 @@ ggplot(bc.distance.d, aes(x = Pairs, y = BC_distance, fill = col.box)) +
   facet_wrap(~ Domain) +
   scale_colour_manual(values = ramp) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        # axis.text.y = element_blank(), # outcomment for eukaryotes
+        # axis.title.y = element_blank(), # outcomment for eukaryotes
         legend.position = "top") +
   ylim(0, 1) +
   xlab("") +
   ylab("Bray-Curtis dissimilarity") +
   scale_fill_identity()
-# ggsave("SMP_16S_BC-dissimilarity.pdf", width = 6.5, height = 8.27)
-# ggsave("SMP_18S_BC-dissimilarity.pdf", width = 6.5, height = 8.27)
+# ggsave("img/SMP_16S_BC-dissimilarity.pdf", width = 6.5, height = 8.27)
+# ggsave("img/SMP_18S_BC-dissimilarity.pdf", width = 6.5, height = 8.27)

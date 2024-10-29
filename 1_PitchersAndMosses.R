@@ -140,8 +140,8 @@ ggplot(overlaps) +
   theme(legend.position = "none", legend.direction = "horizontal") +
   ylim(0, 100) +
   xlab("") +
-  ylab("Overlap pitcher- with moss taxa [%]")
-# ggsave("SMP_Overlap.pdf", width = 11.69, height = 6)
+  ylab("Overlap leaf- with moss taxa [%]")
+# ggsave("img/SMP_Overlap.pdf", width = 11.69, height = 6)
 
 
 ## Get overlap statistics
@@ -157,8 +157,8 @@ aggregate(Overlap ~ Site + Domain, data = overlaps, FUN = mean)
 ################################################################################
 ### Alluvial diagrams = taxonomic overlap
 ## Pitcher and moss
-smp.moss <- merge_phyloseq(prok.a, moss.prok.a) # Prokaryotes
-# smp.moss <- merge_phyloseq(euk.a, moss.euk.a) # Eukaryotes
+# smp.moss <- merge_phyloseq(prok.a, moss.prok.a) # Prokaryotes
+smp.moss <- merge_phyloseq(euk.a, moss.euk.a) # Eukaryotes
 
 
 tax.sm <- as.data.frame(smp.moss@tax_table@.Data)
@@ -177,10 +177,10 @@ rm(tax.sm, otu.sm)
 
 
 ## Pitcher and moss taxa
-mb.pitcher <- colnames(otu_table(prok.a))
-mb.moss <- colnames(otu_table(moss.prok.a))
-# mb.pitcher <- colnames(otu_table(euk.a))
-# mb.moss <- colnames(otu_table(moss.euk.a))
+# mb.pitcher <- colnames(otu_table(prok.a))
+# mb.moss <- colnames(otu_table(moss.prok.a))
+mb.pitcher <- colnames(otu_table(euk.a))
+mb.moss <- colnames(otu_table(moss.euk.a))
 
 shared <- intersect(mb.pitcher, mb.moss)
 only.p <- setdiff(mb.pitcher, mb.moss)
@@ -222,23 +222,23 @@ ggplot(data = tax.otu.sm,
   stat_alluvium(aes(fill = Habitat)) +
   geom_stratum(linetype = 1, lwd = 0.01) +
   ## prok
-  geom_text(stat = "stratum", aes(label = after_stat(stratum)), size = 0.85) +
+  # geom_text(stat = "stratum", aes(label = after_stat(stratum)), size = 0.85) +
   ## euk
-  # geom_text(stat = "stratum", aes(label = after_stat(stratum)), size = 1.8) +
+  geom_text(stat = "stratum", aes(label = after_stat(stratum)), size = 1.8) +
   scale_fill_manual(values = c("#D55E00", "#009E73")) +
   theme_void() +
   theme(legend.position = "none")
-# ggsave("SMP_16S_Alluvial_ASV.pdf", width = 8.27, height = 11.69)
-# ggsave("SMP_18S_Alluvial_ASV.pdf", width = 8.27, height = 11.69)
+# ggsave("img/SMP_16S_Alluvial_ASV.pdf", width = 8.27, height = 11.69)
+# ggsave("img/SMP_18S_Alluvial_ASV.pdf", width = 8.27, height = 11.69)
 
 
 ################################################################################
 ### Venn diagrams for site-level overlap comparison
 ## Pitcher and moss taxa
-# mb.pitcher <- colnames(otu_table(prok.a))
-# mb.moss <- colnames(otu_table(moss.prok.a))
-mb.pitcher <- colnames(otu_table(euk.a))
-mb.moss <- colnames(otu_table(moss.euk.a))
+mb.pitcher <- colnames(otu_table(prok.a))
+mb.moss <- colnames(otu_table(moss.prok.a))
+# mb.pitcher <- colnames(otu_table(euk.a))
+# mb.moss <- colnames(otu_table(moss.euk.a))
 
 
 ## Venn global and site-wise
@@ -306,8 +306,8 @@ for (i in 1:length(sites)) {
 }
 
 
-# pdf("SMP_venn_16S_Sitewise.pdf", height = 7, width = 8.27)
-pdf("SMP_venn_18S_Sitewise.pdf", height = 7, width = 8.27)
+# pdf("img/SMP_venn_16S_Sitewise.pdf", height = 7, width = 8.27)
+pdf("img/SMP_venn_18S_Sitewise.pdf", height = 7, width = 8.27)
 grid.arrange(grobTree(vennAll), grobTree(vennCB), grobTree(vennLT),
              grobTree(vennLE), grobTree(vennLV), grobTree(vennLM), ncol = 2)
 dev.off()
