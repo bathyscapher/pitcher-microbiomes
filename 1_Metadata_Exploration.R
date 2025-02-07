@@ -1,6 +1,7 @@
-### SMP Read taxa (OTU or ASV), add metadata and much more
+### Read taxa (ASV), add metadata and much more
 
-
+library("ade4")
+library("cocorresp")
 library("phyloseq")
 library("ggplot2")
 library("GGally")
@@ -34,8 +35,8 @@ moss.euk.a <- readRDS("rds/SMP_moss20.euk.a.RDS")
 ################################################################################
 ### nMDS pitchers
 ## Choose pro- or eukaryotes
-# primer <- "16S"
-primer <- "18S"
+primer <- "16S"
+# primer <- "18S"
 
 
 if(primer == "16S") {
@@ -107,6 +108,63 @@ plot_ordination(smp.moss, smp.moss.nmds,
 # ggsave("img/SMP_18S_nMDS_withMoss.pdf", width = 8.27, height = 8.27)
 
 
+
+
+
+################################################################################
+### Symmetric CoCA #############################################################
+## Get ASVs
+otu.p <- data.frame(otu_table(prok.a))
+otu.p <- otu.p[!(row.names(otu.p) %in% "LT4a06E"), ]
+otu.e <- data.frame(otu_table(euk.a))
+# setdiff(rownames(otu.p), rownames(otu.e))
+
+
+## sCoCA
+source("~/Seafile/SarraceniaMicrobiomeProject/analysis/CoCa_Alric/sCoCA-permutation.R")
+
+
+sCoCA.smp <- coca(otu.p ~ ., otu.e, method = "symmetric", symmetric = TRUE)
+summary(sCoCA.smp)
+
+
+## Permutation test to evaluate the significance of the association between two
+## tables
+eig.test <- randtest.coca(X = otu.p, Y = otu.e, nrepet = 999)
+
+
+## Amount of covariance explained by each axis of the sCoCA. Keep 3 axes it says
+# pdf("SMP_sCoCA_eigen.pdf", height = 4, width = 11.69)
+screeplot(sCoCA.smp, xlab = "sCoCA axes")
+# dev.off()
+
+
+## Common variance. sum(sCoCA.smp$lambda) = "trace" = "total inertia"
+100 * (sCoCA.smp$lambda[1:3]) / sum(sCoCA.smp$lambda)
+sum(100 * (sCoCA.smp$lambda[1:3]) / sum(sCoCA.smp$lambda))
+
+
+## Correlation between CoCA axes of X and Y
+head(corAxis(sCoCA.smp))
+
+
+## Refit
+sCoCA.smp4 <- coca(otu.p ~ ., otu.e, method = "symmetric", symmetric = TRUE,
+                   n.axes = 3)
+
+
+## Variance explained for each table
+eig.p <- 100 * (sCoCA.smp4$inertia$total$Y - sCoCA.smp4$inertia$residual$Y) /
+  sCoCA.smp4$inertia$total$Y
+eig.e <- 100 * (sCoCA.smp4$inertia$total$X - sCoCA.smp4$inertia$residual$X) /
+  sCoCA.smp4$inertia$total$X
+eig.e; eig.p
+
+
+
+
+
+
 ################################################################################
 ### Plot taxa
 ## Load pro- and eukaryotic taxa together
@@ -145,7 +203,6 @@ tax.otu.lm$Domain[tax.otu.lm$Domain == "Archaea"] <- "A."
 tax.otu.lm[, c(2:7)] <- lapply(tax.otu.lm[, c(2:7)], as.factor)
 
 
-
 tax <- c("Thaumarchaeota", ## Archaea
          ## Proteobacteria
          "Proteobacteria", "Epsilonbacteraeota",
@@ -175,15 +232,17 @@ tax <- c("Thaumarchaeota", ## Archaea
          "Annelida", "Platyhelminthes", "Nematoda", "Rotifera", "Tardigrada",
          "Arthropoda")
 
-
 ## Pronounce small values (otherwise they will be barely visible)
-summary(tax.otu.lm$Count[tax.otu.lm$Count < 0.1])
-tax.otu.lm$Count[tax.otu.lm$Count < 0.1] <- 0.1
+summary(tax.otu.lm$Count[tax.otu.lm$Count < 0.01])
+tax.otu.lm$Count[tax.otu.lm$Count < 0.01 & tax.otu.lm$Count > 0] <- 0.01
 summary(tax.otu.lm$Count)
 
 
+
+
 ## Plot
-ggplot(tax.otu.lm, aes(x = factor(Phylum, level = rev(tax)),
+ggplot(tax.otu.lm, aes(#x = factor(Phylum),
+                       x = factor(Phylum, level = rev(tax)),
                        y = Count, fill = Site)) +
   geom_bar(stat = "identity") +
   facet_grid(Domain ~ Succession, scales = "free_y", space = "free_y") +
@@ -201,6 +260,13 @@ aggregate(Count ~ Class, data = tax.otu.lm, FUN = sum)
 
 
 ### Inspect taxa and frequencies
+unique(tax.otu.l$Domain)
+
+dim(tax.otu.l[tax.otu.l$Domain == "Bacteria", ])
+dim(tax.otu.l[tax.otu.l$Domain == "Eukaryota", ])
+unique(tax.otu.l$Phylum[tax.otu.l$Domain == "Bacteria"])
+unique(tax.otu.l$Phylum[tax.otu.l$Domain == "Eukaryota"])
+
 df <- tax.otu.l[tax.otu.l$Phylum == "Basidiomycota", ]
 summary(colSums(df[, -c(1:7)]) == 0)
 plot(colSums(df[, -c(1:7)]))
@@ -229,6 +295,22 @@ inc <- inc[order(inc$Incidence), ]
 inc$Phylum <- factor(inc$Phylum, levels = unique(as.character(inc$Phylum)))
 inc$IncidencePercent <- 100 / 160 * inc$Incidence
 
+inc$Incidence[inc$Domain == "Archaea"]
+inc$Incidence[inc$Phylum == "Actinobacteria"]
+inc$Incidence[inc$Phylum == "Basidiomycota"]
+
+
+tax.otu.l$Genus[tax.otu.l$Phylum == "Basidiomycota"]
+
+
+# euks <- tax.otu.l[tax.otu.l$Domain == "Eukaryota", ]
+# sort(unique(euks$Phylum))
+#
+# algae <- inc[inc$Phylum %in% c("Chlorophyta_ph", "Phragmoplastophyta", "Cryptomonadales", "Florideophycidae"), ]
+# algae <- euks[euks$Phylum %in% c("Chlorophyta_ph", "Phragmoplastophyta", "Cryptomonadales", "Florideophycidae"), ]
+#
+# Chlorophyta_ph
+# Florideophycidae
 
 ## Abbreviate archaea
 inc$Domain[inc$Domain == "Archaea"] <- "A."

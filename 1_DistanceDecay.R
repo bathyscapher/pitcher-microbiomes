@@ -190,7 +190,8 @@ ggplot(bc.distance, aes(x = round(log1p(Geo_distance), digits = 1),
 
 
 ## Regression coefficients
-bc.distance.d <- subset(bc.distance.s, bc.distance$Domain == "Eukaryotes")
+# bc.distance.d <- subset(bc.distance.s, bc.distance$Domain == "Prokaryotes")
+# bc.distance.d <- subset(bc.distance.s, bc.distance$Domain == "Eukaryotes")
 
 
 dd.fit <- lmList(BC_distance ~ log1p(Geo_distance) | Pairs,
@@ -200,8 +201,8 @@ summary(dd.fit)
 
 ### BC distance sorted by median
 ## Subset by domain (change for Prok- and Eukaryotes, respectively)
-# bc.distance.d <- bc.distance[bc.distance$Domain == "Prokaryotes", ]
-bc.distance.d <- bc.distance[bc.distance$Domain == "Eukaryotes", ]
+bc.distance.d <- bc.distance[bc.distance$Domain == "Prokaryotes", ]
+# bc.distance.d <- bc.distance[bc.distance$Domain == "Eukaryotes", ]
 
 
 ## Sort by median

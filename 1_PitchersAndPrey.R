@@ -128,52 +128,44 @@ ggplot(tax.otu.lm, aes(x = factor(Phylum, level = rev(tax)), y = Count,
 ################################################################################
 ### nMDS
 ## Select domain
-ps <- prok.a
-# ps <- euk.a
+# ps <- prok.a
+ps <- euk.a
 
 
 ## Group insect counts
-sample_data(ps)$prey.items.char <- sample_data(ps)$prey.items
-sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 5 &
-                                  sample_data(ps)$prey.items < 11] <- "6 - 10"
-sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 10 &
-                                  sample_data(ps)$prey.items < 21] <- "11 - 20"
-sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 20 &
-                                  sample_data(ps)$prey.items < 31] <- "21 - 30"
-sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 30 &
-                                  sample_data(ps)$prey.items < 51] <- "31 - 50"
-sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 50 &
+sample_data(ps)$prey.items.grp <- sample_data(ps)$prey.items
+sample_data(ps)$prey.items.grp[sample_data(ps)$prey.items > 0 &
+                                  sample_data(ps)$prey.items < 6] <- "1 - 5"
+sample_data(ps)$prey.items.grp[sample_data(ps)$prey.items > 5 &
+                                  sample_data(ps)$prey.items < 21] <- "6 - 20"
+sample_data(ps)$prey.items.grp[sample_data(ps)$prey.items > 20 &
+                                  sample_data(ps)$prey.items < 51] <- "21 - 50"
+sample_data(ps)$prey.items.grp[sample_data(ps)$prey.items > 50 &
                                   sample_data(ps)$prey.items < 71] <- "51 - 70"
-sample_data(ps)$prey.items.char[sample_data(ps)$prey.items > 70] <- "> 70"
+sample_data(ps)$prey.items.grp[sample_data(ps)$prey.items > 70] <- "> 70"
+table(sample_data(ps)$prey.items.grp)
 
-sample_data(ps)$prey.items <- sample_data(ps)$prey.items.char
-# sample_data(ps)$prey.items.char <- NULL
 
-sample_data(ps)$prey.items <- as.factor(sample_data(ps)$prey.items)
-levels(sample_data(ps)$prey.items) <- c("0", "1", "2", "3", "4", "5",
-                                        "11 - 20", "21 - 30", "31 - 50",
-                                        "51 - 70", "71 - 87", "71 - 87",
-                                        "71 - 87", "> 70")
+sample_data(ps)$prey.items.grp <- as.factor(sample_data(ps)$prey.items.grp)
+# levels(sample_data(ps)$prey.items.grp) <- c("0", "1 - 5", "6 - 20", "21 - 50",
+#                                         "51 - 70", "> 70")
 
 
 smp.log <- transform_sample_counts(ps, function(otu) {log1p(otu)})
 
 
 ## Ordinate
-smp.nmds <- ordinate(smp.log, method = "NMDS", distance = "bray", k = 4,
+smp.nmds <- ordinate(smp.log, method = "NMDS", distance = "euclidean", k = 4,
                      autotransform = FALSE, trymax = 100)
 smp.nmds
 stressplot(smp.nmds)
 
 
-plot_ordination(ps, smp.nmds, shape = "Site", color = "prey.items",
+plot_ordination(ps, smp.nmds, color = "prey.items", #shape = "Site",
                 title = NULL, axes = 1:2) +
-  stat_ellipse(aes(group = prey.items), type = "t", linetype = 2, size = 0.2) +
+  stat_ellipse(aes(group = prey.items.grp), type = "t", linetype = 2, size = 0.2) +
   geom_point(size = 3) +
-  scale_color_manual(values = c("firebrick", "orangered", "darkorange2",
-                                "goldenrod2", "gold", "lightgoldenrod",
-                                "lightskyblue", "steelblue2", "deepskyblue2",
-                                "dodgerblue3", "blue3", "blue4")) +
+  scale_color_continuous(type = "viridis") +
   coord_fixed(ratio = 1) +
   theme(legend.position = "top", legend.direction = "horizontal",
         legend.box = "vertical") +
@@ -209,8 +201,8 @@ prey <- log1p(prey)
 
 
 ## Pro- or eukaryotes
-smp.a <- prok.a
-# smp.a <- euk.a
+# smp.a <- prok.a
+smp.a <- euk.a
 
 
 ## Subset microbiome to samples with prey only
@@ -228,8 +220,11 @@ smp.otu <- log1p(smp.otu)
 
 
 ################################################################################
+# predictive coca
 pCoCA.smp <- coca(smp.otu ~ ., data = prey, method = "predictive",
                   reg.method = "simpls")
+
+# Explained variance
 summary(pCoCA.smp)
 
 
@@ -245,8 +240,3 @@ pCoCA.smp.perm
 pCoCA.smp.1 <- coca(smp.otu ~ ., data = prey, method = "predictive",
                     reg.method = "simpls", n.axes = 1)
 summary(pCoCA.smp.1)
-
-
-### Explained variance
-pCoCA.smp.sum <- summary(pCoCA.smp)
-

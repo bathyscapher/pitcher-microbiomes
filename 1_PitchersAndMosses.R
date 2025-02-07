@@ -157,8 +157,8 @@ aggregate(Overlap ~ Site + Domain, data = overlaps, FUN = mean)
 ################################################################################
 ### Alluvial diagrams = taxonomic overlap
 ## Pitcher and moss
-# smp.moss <- merge_phyloseq(prok.a, moss.prok.a) # Prokaryotes
-smp.moss <- merge_phyloseq(euk.a, moss.euk.a) # Eukaryotes
+smp.moss <- merge_phyloseq(prok.a, moss.prok.a) # Prokaryotes
+# smp.moss <- merge_phyloseq(euk.a, moss.euk.a) # Eukaryotes
 
 
 tax.sm <- as.data.frame(smp.moss@tax_table@.Data)
@@ -177,10 +177,10 @@ rm(tax.sm, otu.sm)
 
 
 ## Pitcher and moss taxa
-# mb.pitcher <- colnames(otu_table(prok.a))
-# mb.moss <- colnames(otu_table(moss.prok.a))
-mb.pitcher <- colnames(otu_table(euk.a))
-mb.moss <- colnames(otu_table(moss.euk.a))
+mb.pitcher <- colnames(otu_table(prok.a))
+mb.moss <- colnames(otu_table(moss.prok.a))
+# mb.pitcher <- colnames(otu_table(euk.a))
+# mb.moss <- colnames(otu_table(moss.euk.a))
 
 shared <- intersect(mb.pitcher, mb.moss)
 only.p <- setdiff(mb.pitcher, mb.moss)
@@ -235,10 +235,10 @@ ggplot(data = tax.otu.sm,
 ################################################################################
 ### Venn diagrams for site-level overlap comparison
 ## Pitcher and moss taxa
-mb.pitcher <- colnames(otu_table(prok.a))
-mb.moss <- colnames(otu_table(moss.prok.a))
-# mb.pitcher <- colnames(otu_table(euk.a))
-# mb.moss <- colnames(otu_table(moss.euk.a))
+# mb.pitcher <- colnames(otu_table(prok.a))
+# mb.moss <- colnames(otu_table(moss.prok.a))
+mb.pitcher <- colnames(otu_table(euk.a))
+mb.moss <- colnames(otu_table(moss.euk.a))
 
 
 ## Venn global and site-wise
